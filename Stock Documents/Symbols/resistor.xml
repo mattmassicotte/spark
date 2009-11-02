@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symboldefinition>
+	<symbol name="resistor">
+		<graphical>
+			<quad identifier="1">
+				<a x="-9.5" y="0.5" />
+				<b x="-8.5" y="0.5" />
+				<c x="-8.5" y="-0.5" />
+				<d x="-9.5" y="-0.5" />
+			</quad>
+			<quad>
+				<a x="-8.5" y="0.5" />
+				<b x="-6.1" y="0.5" />
+				<c x="-6.5" y="-0.5" />
+				<d x="-8.5" y="-0.5" />
+			</quad>
+			<quad>
+				<a x="-6.1" y="0.5" />
+				<b x="-5" y="-1" />
+				<c x="-5" y="-3" />
+				<d x="-6.5" y="-0.5" />
+			</quad>
+			<quad>
+				<a x="-5" y="-1" />
+				<b x="-3" y="3" />
+				<c x="-3" y="1" />
+				<d x="-5" y="-3" />
+			</quad>
+			<quad>
+				<a x="-3" y="3" />
+				<b x="-1" y="-1" />
+				<c x="-1" y="-3" />
+				<d x="-3" y="1" />
+			</quad>
+			<quad> <!-- contains origin -->
+				<a x="-1" y="-1" />
+				<b x="1" y="3" />
+				<c x="1" y="1" />
+				<d x="-1" y="-3" />
+			</quad>
+			<quad>
+				<a x="1" y="3" />
+				<b x="3" y="-1" />
+				<c x="3" y="-3" />
+				<d x="1" y="1" />
+			</quad>
+			<quad>
+				<a x="3" y="-1" />
+				<b x="5" y="3" />
+				<c x="5" y="1" />
+				<d x="3" y="-3" />
+			</quad>
+			<quad>
+				<a x="5" y="3" />
+				<b x="6.5" y="0.5" />
+				<c x="6.1" y="-0.5" />
+				<d x="5" y="1" />
+			</quad>
+			<quad>
+				<a x="6.5" y="0.5" />
+				<b x="8.5" y="0.5" />
+				<c x="8.5" y="-0.5" />
+				<d x="6.1" y="-0.5" />
+			</quad>
+			<quad identifier="2">
+				<a x="8.5" y="0.5" />
+				<b x="9.5" y="0.5" />
+				<c x="9.5" y="-0.5" />
+				<d x="8.5" y="-0.5" />
+			</quad>
+		</graphical>
+	</symbol>
+</symboldefinition>

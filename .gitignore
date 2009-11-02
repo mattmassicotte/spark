@@ -1,0 +1,14 @@
+# skip os-specific files
+.DS_Store
+
+# tmp files generated during development
+*.swp
+*~.nib
+build/
+
+# crap that ends up in the project (per-user config files)
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
