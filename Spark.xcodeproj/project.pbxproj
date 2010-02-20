@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F7446C30DB6CCE400F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446BF0DB6CCE400F9684A /* MainMenu.xib */; };
-		2F7446C40DB6CCE400F9684A /* SparkDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446C10DB6CCE400F9684A /* SparkDocument.xib */; };
 		514E9E12081EC6B8009B8CD9 /* GetMetadataForFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 514E9E10081EC6B8009B8CD9 /* GetMetadataForFile.c */; };
 		514E9E13081EC6B8009B8CD9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 514E9E11081EC6B8009B8CD9 /* main.c */; };
 		514E9E2E081EC793009B8CD9 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514E9E2D081EC793009B8CD9 /* CoreServices.framework */; };
@@ -16,36 +14,25 @@
 		514EA011081EC7AB009B8CD9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7788DA0506752A1600599AAD /* CoreData.framework */; };
 		514EA015081EC7C3009B8CD9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */; };
 		514EA082081ECB54009B8CD9 /* Spark.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 514E9DF9081EBF9C009B8CD9 /* Spark.mdimporter */; };
-		775BDEF1067A8BF0009058FE /* SparkDocument.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 775BDEF0067A8BF0009058FE /* SparkDocument.xcdatamodel */; };
 		775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
-		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
-		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
-		8D15AC310486D014006FF6A4 /* SparkDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* SparkDocument.m */; settings = {ATTRIBUTES = (); }; };
-		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		C9217F7F112116CB00401AD4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		C92188E3112735AE00401AD4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97D081A1043A1F000F6BBCC /* OpenGL.framework */; };
+		C9218E1411299BAB00401AD4 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
+		C9218E4E11299BFF00401AD4 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
+		C9219196112FB9F300401AD4 /* SparkViewerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219193112FB9F300401AD4 /* SparkViewerAppDelegate.m */; };
+		C9219197112FB9F300401AD4 /* SPGerberParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219195112FB9F300401AD4 /* SPGerberParser.m */; };
+		C92191D7112FBB3900401AD4 /* SPGerberParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C92191A7112FBA5800401AD4 /* SPGerberParserTest.m */; };
+		C92191D8112FBB3C00401AD4 /* MockGerberParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92191A5112FBA5800401AD4 /* MockGerberParserDelegate.m */; };
+		C92191D9112FBB4A00401AD4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		C92191F2112FBD8500401AD4 /* SPGerberParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219195112FB9F300401AD4 /* SPGerberParser.m */; };
+		C92191FB112FBDC400401AD4 /* PFGerberApertureDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */; };
+		C92191FC112FBDC400401AD4 /* PFGerberApertureMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */; };
+		C92191FD112FBDC400401AD4 /* PFGerberCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */; };
+		C92191FE112FBDC400401AD4 /* PFGerberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = C921913B112FB8F400401AD4 /* PFGerberFormat.m */; };
+		C92191FF112FBDC400401AD4 /* PFGerberFunctionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C921913D112FB8F400401AD4 /* PFGerberFunctionCode.m */; };
+		C9219208112FBE9F00401AD4 /* NSScannerExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C92190FB112FB8F300401AD4 /* NSScannerExtensions.m */; };
 		C97D061C1042101600F6BBCC /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
-		C97D068D10421B3300F6BBCC /* SparkScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C97D068C10421B3300F6BBCC /* SparkScrollView.m */; };
-		C97D07F310439B6900F6BBCC /* SparkOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C97D07F210439B6900F6BBCC /* SparkOpenGLView.m */; };
 		C97D081B1043A1F000F6BBCC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97D081A1043A1F000F6BBCC /* OpenGL.framework */; };
-		C982CC171058ABE000B54F39 /* ProjectNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C982CC161058ABE000B54F39 /* ProjectNode.m */; };
-		C982CCBD1058BA2200B54F39 /* SchematicNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C982CCBC1058BA2200B54F39 /* SchematicNode.m */; };
-		C988C10B1049EB9600D797C1 /* SPFacet.m in Sources */ = {isa = PBXBuildFile; fileRef = C988C0FE1049EB9500D797C1 /* SPFacet.m */; };
-		C988C1181049EEC300D797C1 /* SparkWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C988C1171049EEC300D797C1 /* SparkWindowController.m */; };
-		C988C11C1049EF3B00D797C1 /* SchematicController.m in Sources */ = {isa = PBXBuildFile; fileRef = C988C11B1049EF3B00D797C1 /* SchematicController.m */; };
-		C988C643104CC83600D797C1 /* GraphicalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C988C642104CC83600D797C1 /* GraphicalController.m */; };
-		C99AA2C0104F823000D2B825 /* SparkElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = C99AA2BF104F823000D2B825 /* SparkElementView.m */; };
-		C9A1197110860F43003EC1CF /* Symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A1196C10860F43003EC1CF /* Symbol.m */; };
-		C9A1197210860F43003EC1CF /* DesignElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A1196E10860F43003EC1CF /* DesignElement.m */; };
-		C9A1197310860F43003EC1CF /* SparkComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A1197010860F43003EC1CF /* SparkComponent.m */; };
-		C9A11B75109C93F9003EC1CF /* NewComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A11B74109C93F9003EC1CF /* NewComponent.xib */; };
-		C9A11B79109C952D003EC1CF /* SparkNewComponentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A11B78109C952D003EC1CF /* SparkNewComponentWindowController.m */; };
-		C9F06EDA1084325B00362CAE /* PCBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06ED91084325B00362CAE /* PCBNode.m */; };
-		C9F06EEC1084334400362CAE /* CAMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06EEB1084334400362CAE /* CAMNode.m */; };
-		C9F06F3D1084D60E00362CAE /* Definition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06F361084D60E00362CAE /* Definition.m */; };
-		C9F06F3E1084D60E00362CAE /* Primitive.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06F381084D60E00362CAE /* Primitive.m */; };
-		C9F06F3F1084D60E00362CAE /* SymbolDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06F3A1084D60E00362CAE /* SymbolDefinition.m */; };
-		C9F06F401084D60E00362CAE /* GraphicalRep.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06F3C1084D60E00362CAE /* GraphicalRep.m */; };
-		C9F06F431084D78300362CAE /* Quad.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06F421084D78300362CAE /* Quad.m */; };
-		C9F06F6210858D3500362CAE /* SparkDefinitionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F06F6110858D3500362CAE /* SparkDefinitionParser.m */; };
 		C9F8FA3310420E9500CFE30A /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +57,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9218E1311299BA600401AD4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9218E1411299BAB00401AD4 /* BWToolkitFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C97D061B10420FFB00F6BBCC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,17 +80,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		2A37F4ACFDCFA73011CA2CEA /* SparkDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkDocument.m; path = Models/SparkDocument.m; sourceTree = "<group>"; };
-		2A37F4AEFDCFA73011CA2CEA /* SparkDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkDocument.h; path = Models/SparkDocument.h; sourceTree = "<group>"; };
-		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2F7446C00DB6CCE400F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2F7446C20DB6CCE400F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkDocument.xib; sourceTree = "<group>"; };
-		32DBCF750370BD2300C91783 /* Spark_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spark_Prefix.pch; sourceTree = "<group>"; };
 		514E9DF9081EBF9C009B8CD9 /* Spark.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spark.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		514E9DFA081EBF9C009B8CD9 /* Importer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Importer-Info.plist"; path = "Importer/Importer-Info.plist"; sourceTree = "<group>"; };
 		514E9E10081EC6B8009B8CD9 /* GetMetadataForFile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 30; name = GetMetadataForFile.c; path = Importer/GetMetadataForFile.c; sourceTree = "<group>"; };
@@ -101,56 +90,131 @@
 		514E9E16081EC6D5009B8CD9 /* Importer Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = "Importer Read Me.txt"; path = "Importer/Importer Read Me.txt"; sourceTree = "<group>"; };
 		514E9E2D081EC793009B8CD9 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		775BDEF0067A8BF0009058FE /* SparkDocument.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SparkDocument.xcdatamodel; path = Models/SparkDocument.xcdatamodel; sourceTree = "<group>"; };
 		7788DA0506752A1600599AAD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		8D15AC360486D014006FF6A4 /* Spark-Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; path = "Spark-Info.plist"; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Spark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spark.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C97D068B10421B3300F6BBCC /* SparkScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkScrollView.h; path = Visualization/Views/SparkScrollView.h; sourceTree = "<group>"; };
-		C97D068C10421B3300F6BBCC /* SparkScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkScrollView.m; path = Visualization/Views/SparkScrollView.m; sourceTree = "<group>"; };
-		C97D07F110439B6900F6BBCC /* SparkOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkOpenGLView.h; path = Visualization/Views/SparkOpenGLView.h; sourceTree = "<group>"; };
-		C97D07F210439B6900F6BBCC /* SparkOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkOpenGLView.m; path = Visualization/Views/SparkOpenGLView.m; sourceTree = "<group>"; };
+		C9217D30111F133D00401AD4 /* PCBFabTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCBFabTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9217F5F1121161000401AD4 /* SparkViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92190FA112FB8F300401AD4 /* NSScannerExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScannerExtensions.h; sourceTree = "<group>"; };
+		C92190FB112FB8F300401AD4 /* NSScannerExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScannerExtensions.m; sourceTree = "<group>"; };
+		C92190FD112FB8F300401AD4 /* SparkDefinitionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkDefinitionParser.h; sourceTree = "<group>"; };
+		C92190FE112FB8F300401AD4 /* SparkDefinitionParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkDefinitionParser.m; sourceTree = "<group>"; };
+		C92190FF112FB8F300401AD4 /* SparkGerberRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkGerberRenderer.h; sourceTree = "<group>"; };
+		C9219100112FB8F300401AD4 /* SparkGerberRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkGerberRenderer.m; sourceTree = "<group>"; };
+		C9219104112FB8F300401AD4 /* GraphicalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicalController.h; sourceTree = "<group>"; };
+		C9219105112FB8F300401AD4 /* GraphicalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicalController.m; sourceTree = "<group>"; };
+		C9219106112FB8F300401AD4 /* SchematicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchematicController.h; sourceTree = "<group>"; };
+		C9219107112FB8F300401AD4 /* SchematicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchematicController.m; sourceTree = "<group>"; };
+		C9219108112FB8F300401AD4 /* SparkCAMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkCAMViewController.h; sourceTree = "<group>"; };
+		C9219109112FB8F300401AD4 /* SparkCAMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkCAMViewController.m; sourceTree = "<group>"; };
+		C921910B112FB8F300401AD4 /* SparkNewComponentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkNewComponentWindowController.h; sourceTree = "<group>"; };
+		C921910C112FB8F300401AD4 /* SparkNewComponentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkNewComponentWindowController.m; sourceTree = "<group>"; };
+		C921910D112FB8F300401AD4 /* SparkViewerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkViewerWindowController.h; sourceTree = "<group>"; };
+		C921910E112FB8F300401AD4 /* SparkViewerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkViewerWindowController.m; sourceTree = "<group>"; };
+		C921910F112FB8F300401AD4 /* SparkWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkWindowController.h; sourceTree = "<group>"; };
+		C9219110112FB8F300401AD4 /* SparkWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkWindowController.m; sourceTree = "<group>"; };
+		C9219111112FB8F300401AD4 /* SPImportWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImportWindowController.h; sourceTree = "<group>"; };
+		C9219112112FB8F300401AD4 /* SPImportWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPImportWindowController.m; sourceTree = "<group>"; };
+		C9219113112FB8F300401AD4 /* SPWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWindowController.h; sourceTree = "<group>"; };
+		C9219114112FB8F300401AD4 /* SPWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWindowController.m; sourceTree = "<group>"; };
+		C9219134112FB8F400401AD4 /* PFGerberApertureDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGerberApertureDefinition.h; sourceTree = "<group>"; };
+		C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGerberApertureDefinition.m; sourceTree = "<group>"; };
+		C9219136112FB8F400401AD4 /* PFGerberApertureMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGerberApertureMacro.h; sourceTree = "<group>"; };
+		C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGerberApertureMacro.m; sourceTree = "<group>"; };
+		C9219138112FB8F400401AD4 /* PFGerberCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGerberCoordinate.h; sourceTree = "<group>"; };
+		C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGerberCoordinate.m; sourceTree = "<group>"; };
+		C921913A112FB8F400401AD4 /* PFGerberFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGerberFormat.h; sourceTree = "<group>"; };
+		C921913B112FB8F400401AD4 /* PFGerberFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGerberFormat.m; sourceTree = "<group>"; };
+		C921913C112FB8F400401AD4 /* PFGerberFunctionCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGerberFunctionCode.h; path = FunctionCodes/PFGerberFunctionCode.h; sourceTree = "<group>"; };
+		C921913D112FB8F400401AD4 /* PFGerberFunctionCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFGerberFunctionCode.m; path = FunctionCodes/PFGerberFunctionCode.m; sourceTree = "<group>"; };
+		C921913F112FB8F400401AD4 /* Arc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arc.h; sourceTree = "<group>"; };
+		C9219140112FB8F400401AD4 /* Arc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arc.m; sourceTree = "<group>"; };
+		C9219141112FB8F400401AD4 /* GraphicalRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicalRep.h; sourceTree = "<group>"; };
+		C9219142112FB8F400401AD4 /* GraphicalRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicalRep.m; sourceTree = "<group>"; };
+		C9219143112FB8F400401AD4 /* Primitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Primitive.h; sourceTree = "<group>"; };
+		C9219144112FB8F400401AD4 /* Primitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Primitive.m; sourceTree = "<group>"; };
+		C9219145112FB8F400401AD4 /* Quad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quad.h; sourceTree = "<group>"; };
+		C9219146112FB8F400401AD4 /* Quad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quad.m; sourceTree = "<group>"; };
+		C9219148112FB8F400401AD4 /* SparkComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkComponent.h; sourceTree = "<group>"; };
+		C9219149112FB8F400401AD4 /* SparkComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkComponent.m; sourceTree = "<group>"; };
+		C921914A112FB8F400401AD4 /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		C921914B112FB8F400401AD4 /* Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Symbol.m; sourceTree = "<group>"; };
+		C921914C112FB8F400401AD4 /* SymbolDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolDefinition.h; sourceTree = "<group>"; };
+		C921914D112FB8F400401AD4 /* SymbolDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolDefinition.m; sourceTree = "<group>"; };
+		C921914E112FB8F400401AD4 /* SparkDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkDocument.h; sourceTree = "<group>"; };
+		C921914F112FB8F400401AD4 /* SparkDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkDocument.m; sourceTree = "<group>"; };
+		C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SparkDocument.xcdatamodel; sourceTree = "<group>"; };
+		C9219151112FB8F400401AD4 /* SparkViewerDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkViewerDocument.h; sourceTree = "<group>"; };
+		C9219152112FB8F400401AD4 /* SparkViewerDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkViewerDocument.m; sourceTree = "<group>"; };
+		C9219154112FB8F400401AD4 /* CAMLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMLayer.h; sourceTree = "<group>"; };
+		C9219155112FB8F400401AD4 /* CAMLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMLayer.m; sourceTree = "<group>"; };
+		C9219156112FB8F400401AD4 /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
+		C9219157112FB8F400401AD4 /* Definition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Definition.m; sourceTree = "<group>"; };
+		C9219158112FB8F400401AD4 /* DesignElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignElement.h; sourceTree = "<group>"; };
+		C9219159112FB8F400401AD4 /* DesignElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignElement.m; sourceTree = "<group>"; };
+		C921915A112FB8F400401AD4 /* DesignSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignSurface.h; sourceTree = "<group>"; };
+		C921915B112FB8F400401AD4 /* DesignSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignSurface.m; sourceTree = "<group>"; };
+		C921915C112FB8F400401AD4 /* FreeElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeElement.h; sourceTree = "<group>"; };
+		C921915D112FB8F400401AD4 /* FreeElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeElement.m; sourceTree = "<group>"; };
+		C921915F112FB8F400401AD4 /* CAMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMNode.h; sourceTree = "<group>"; };
+		C9219160112FB8F400401AD4 /* CAMNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMNode.m; sourceTree = "<group>"; };
+		C9219161112FB8F400401AD4 /* PCBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCBNode.h; sourceTree = "<group>"; };
+		C9219162112FB8F400401AD4 /* PCBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCBNode.m; sourceTree = "<group>"; };
+		C9219163112FB8F400401AD4 /* SchematicNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchematicNode.h; sourceTree = "<group>"; };
+		C9219164112FB8F400401AD4 /* SchematicNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchematicNode.m; sourceTree = "<group>"; };
+		C9219165112FB8F400401AD4 /* SPProjectNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPProjectNode.h; sourceTree = "<group>"; };
+		C9219166112FB8F400401AD4 /* SPProjectNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPProjectNode.m; sourceTree = "<group>"; };
+		C9219168112FB8F400401AD4 /* Spark_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spark_Prefix.pch; sourceTree = "<group>"; };
+		C921916B112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C921916D112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ImportWindow.xib; sourceTree = "<group>"; };
+		C921916F112FB8F400401AD4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9219171112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C9219173112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/NewComponent.xib; sourceTree = "<group>"; };
+		C9219175112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkDocument.xib; sourceTree = "<group>"; };
+		C9219177112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkViewerDocument.xib; sourceTree = "<group>"; };
+		C9219179112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkViewerMainMenu.xib; sourceTree = "<group>"; };
+		C921917B112FB8F400401AD4 /* Spark-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Spark-Info.plist"; sourceTree = "<group>"; };
+		C921917C112FB8F400401AD4 /* SparkViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SparkViewer-Info.plist"; sourceTree = "<group>"; };
+		C921917E112FB8F400401AD4 /* SparkVisualization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkVisualization.h; sourceTree = "<group>"; };
+		C921917F112FB8F400401AD4 /* SPFacet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacet.h; sourceTree = "<group>"; };
+		C9219180112FB8F400401AD4 /* SPFacet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFacet.m; sourceTree = "<group>"; };
+		C9219181112FB8F400401AD4 /* SPGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGeometry.h; sourceTree = "<group>"; };
+		C9219183112FB8F400401AD4 /* SparkElementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkElementView.h; sourceTree = "<group>"; };
+		C9219184112FB8F400401AD4 /* SparkElementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkElementView.m; sourceTree = "<group>"; };
+		C9219185112FB8F400401AD4 /* SparkOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkOpenGLView.h; sourceTree = "<group>"; };
+		C9219186112FB8F400401AD4 /* SparkOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkOpenGLView.m; sourceTree = "<group>"; };
+		C9219187112FB8F400401AD4 /* SparkScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkScrollView.h; sourceTree = "<group>"; };
+		C9219188112FB8F400401AD4 /* SparkScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkScrollView.m; sourceTree = "<group>"; };
+		C9219192112FB9F300401AD4 /* SparkViewerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkViewerAppDelegate.h; sourceTree = "<group>"; };
+		C9219193112FB9F300401AD4 /* SparkViewerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkViewerAppDelegate.m; sourceTree = "<group>"; };
+		C9219194112FB9F300401AD4 /* SPGerberParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGerberParser.h; sourceTree = "<group>"; };
+		C9219195112FB9F300401AD4 /* SPGerberParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGerberParser.m; sourceTree = "<group>"; };
+		C92191A3112FBA5800401AD4 /* GerberParserTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GerberParserTest-Info.plist"; sourceTree = "<group>"; };
+		C92191A4112FBA5800401AD4 /* MockGerberParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockGerberParserDelegate.h; sourceTree = "<group>"; };
+		C92191A5112FBA5800401AD4 /* MockGerberParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockGerberParserDelegate.m; sourceTree = "<group>"; };
+		C92191A6112FBA5800401AD4 /* SPGerberParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGerberParserTest.h; sourceTree = "<group>"; };
+		C92191A7112FBA5800401AD4 /* SPGerberParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGerberParserTest.m; sourceTree = "<group>"; };
+		C92191AA112FBA5800401AD4 /* Break Out Board V2_7.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.TXT"; sourceTree = "<group>"; };
+		C92191AC112FBA5800401AD4 /* Break Out Board V2_7.apr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.apr"; sourceTree = "<group>"; };
+		C92191AD112FBA5800401AD4 /* Break Out Board V2_7.DRR */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.DRR"; sourceTree = "<group>"; };
+		C92191AE112FBA5800401AD4 /* Break Out Board V2_7.GBL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.GBL"; sourceTree = "<group>"; };
+		C92191AF112FBA5800401AD4 /* Break Out Board V2_7.GBO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.GBO"; sourceTree = "<group>"; };
+		C92191B0112FBA5800401AD4 /* Break Out Board V2_7.GBS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.GBS"; sourceTree = "<group>"; };
+		C92191B1112FBA5800401AD4 /* Break Out Board V2_7.GTO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.GTO"; sourceTree = "<group>"; };
+		C92191B2112FBA5800401AD4 /* Break Out Board V2_7.GTS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Break Out Board V2_7.GTS"; sourceTree = "<group>"; };
+		C92191B3112FBA5800401AD4 /* gerber_document_boxes.GTL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gerber_document_boxes.GTL; sourceTree = "<group>"; };
+		C92191B4112FBA5800401AD4 /* protel_output.GM1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = protel_output.GM1; sourceTree = "<group>"; };
+		C92191B5112FBA5800401AD4 /* protel_output.GTL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = protel_output.GTL; sourceTree = "<group>"; };
+		C92191B7112FBA5800401AD4 /* aperture_macro.gtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aperture_macro.gtl; sourceTree = "<group>"; };
+		C92191B8112FBA5800401AD4 /* basic_document.GTL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basic_document.GTL; sourceTree = "<group>"; };
+		C92191B9112FBA5800401AD4 /* basic_document_without_percents_on_each_line.gtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basic_document_without_percents_on_each_line.gtl; sourceTree = "<group>"; };
+		C92191BA112FBA5800401AD4 /* image_polarity.gtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = image_polarity.gtl; sourceTree = "<group>"; };
+		C92191BB112FBA5800401AD4 /* layer_polarity.gtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = layer_polarity.gtl; sourceTree = "<group>"; };
+		C92191BC112FBA5800401AD4 /* single_arc_coordinate.GTL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = single_arc_coordinate.GTL; sourceTree = "<group>"; };
+		C92191CD112FBAD800401AD4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C92191CE112FBAD800401AD4 /* SparkViewer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkViewer_Prefix.pch; sourceTree = "<group>"; };
+		C92191DF112FBC1E00401AD4 /* SPFabrication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFabrication.h; sourceTree = "<group>"; };
 		C97D081A1043A1F000F6BBCC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
-		C982CC151058ABE000B54F39 /* ProjectNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectNode.h; path = "Models/UI-Related/ProjectNode.h"; sourceTree = "<group>"; };
-		C982CC161058ABE000B54F39 /* ProjectNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectNode.m; path = "Models/UI-Related/ProjectNode.m"; sourceTree = "<group>"; };
-		C982CCBB1058BA2200B54F39 /* SchematicNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchematicNode.h; path = "Models/UI-Related/SchematicNode.h"; sourceTree = "<group>"; };
-		C982CCBC1058BA2200B54F39 /* SchematicNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchematicNode.m; path = "Models/UI-Related/SchematicNode.m"; sourceTree = "<group>"; };
-		C988C0FD1049EB9500D797C1 /* SPFacet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPFacet.h; path = Visualization/SPFacet.h; sourceTree = "<group>"; };
-		C988C0FE1049EB9500D797C1 /* SPFacet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPFacet.m; path = Visualization/SPFacet.m; sourceTree = "<group>"; };
-		C988C0FF1049EB9500D797C1 /* SPGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGeometry.h; path = Visualization/SPGeometry.h; sourceTree = "<group>"; };
-		C988C1161049EEC300D797C1 /* SparkWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkWindowController.h; path = "Controllers/Window Controllers/SparkWindowController.h"; sourceTree = "<group>"; };
-		C988C1171049EEC300D797C1 /* SparkWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkWindowController.m; path = "Controllers/Window Controllers/SparkWindowController.m"; sourceTree = "<group>"; };
-		C988C11A1049EF3B00D797C1 /* SchematicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchematicController.h; path = "Controllers/View Controllers/SchematicController.h"; sourceTree = "<group>"; };
-		C988C11B1049EF3B00D797C1 /* SchematicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchematicController.m; path = "Controllers/View Controllers/SchematicController.m"; sourceTree = "<group>"; };
-		C988C641104CC83600D797C1 /* GraphicalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphicalController.h; path = "Controllers/View Controllers/GraphicalController.h"; sourceTree = "<group>"; };
-		C988C642104CC83600D797C1 /* GraphicalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphicalController.m; path = "Controllers/View Controllers/GraphicalController.m"; sourceTree = "<group>"; };
-		C99AA2BE104F823000D2B825 /* SparkElementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkElementView.h; path = Visualization/Views/SparkElementView.h; sourceTree = "<group>"; };
-		C99AA2BF104F823000D2B825 /* SparkElementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkElementView.m; path = Visualization/Views/SparkElementView.m; sourceTree = "<group>"; };
-		C9A1196B10860F43003EC1CF /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Symbol.h; path = Models/Data/Symbol.h; sourceTree = "<group>"; };
-		C9A1196C10860F43003EC1CF /* Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Symbol.m; path = Models/Data/Symbol.m; sourceTree = "<group>"; };
-		C9A1196D10860F43003EC1CF /* DesignElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DesignElement.h; path = Models/Data/DesignElement.h; sourceTree = "<group>"; };
-		C9A1196E10860F43003EC1CF /* DesignElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DesignElement.m; path = Models/Data/DesignElement.m; sourceTree = "<group>"; };
-		C9A1196F10860F43003EC1CF /* SparkComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkComponent.h; path = Models/Data/SparkComponent.h; sourceTree = "<group>"; };
-		C9A1197010860F43003EC1CF /* SparkComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkComponent.m; path = Models/Data/SparkComponent.m; sourceTree = "<group>"; };
-		C9A11B72109C93F0003EC1CF /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/NewComponent.xib; sourceTree = "<group>"; };
-		C9A11B77109C952D003EC1CF /* SparkNewComponentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkNewComponentWindowController.h; path = "Controllers/Window Controllers/SparkNewComponentWindowController.h"; sourceTree = "<group>"; };
-		C9A11B78109C952D003EC1CF /* SparkNewComponentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkNewComponentWindowController.m; path = "Controllers/Window Controllers/SparkNewComponentWindowController.m"; sourceTree = "<group>"; };
-		C9F06ED81084325B00362CAE /* PCBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCBNode.h; path = "Models/UI-Related/PCBNode.h"; sourceTree = "<group>"; };
-		C9F06ED91084325B00362CAE /* PCBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCBNode.m; path = "Models/UI-Related/PCBNode.m"; sourceTree = "<group>"; };
-		C9F06EEA1084334400362CAE /* CAMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAMNode.h; path = "Models/UI-Related/CAMNode.h"; sourceTree = "<group>"; };
-		C9F06EEB1084334400362CAE /* CAMNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAMNode.m; path = "Models/UI-Related/CAMNode.m"; sourceTree = "<group>"; };
-		C9F06F351084D60E00362CAE /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Definition.h; path = Models/Data/Definition.h; sourceTree = "<group>"; };
-		C9F06F361084D60E00362CAE /* Definition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Definition.m; path = Models/Data/Definition.m; sourceTree = "<group>"; };
-		C9F06F371084D60E00362CAE /* Primitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Primitive.h; path = Models/Data/Primitive.h; sourceTree = "<group>"; };
-		C9F06F381084D60E00362CAE /* Primitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Primitive.m; path = Models/Data/Primitive.m; sourceTree = "<group>"; };
-		C9F06F391084D60E00362CAE /* SymbolDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SymbolDefinition.h; path = Models/Data/SymbolDefinition.h; sourceTree = "<group>"; };
-		C9F06F3A1084D60E00362CAE /* SymbolDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SymbolDefinition.m; path = Models/Data/SymbolDefinition.m; sourceTree = "<group>"; };
-		C9F06F3B1084D60E00362CAE /* GraphicalRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphicalRep.h; path = Models/Data/GraphicalRep.h; sourceTree = "<group>"; };
-		C9F06F3C1084D60E00362CAE /* GraphicalRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphicalRep.m; path = Models/Data/GraphicalRep.m; sourceTree = "<group>"; };
-		C9F06F411084D78300362CAE /* Quad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quad.h; path = Models/Data/Quad.h; sourceTree = "<group>"; };
-		C9F06F421084D78300362CAE /* Quad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quad.m; path = Models/Data/Quad.m; sourceTree = "<group>"; };
 		C9F06F591085877800362CAE /* resistor.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = resistor.xml; path = "Stock Documents/Symbols/resistor.xml"; sourceTree = "<group>"; };
-		C9F06F6010858D3500362CAE /* SparkDefinitionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkDefinitionParser.h; sourceTree = "<group>"; };
-		C9F06F6110858D3500362CAE /* SparkDefinitionParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkDefinitionParser.m; sourceTree = "<group>"; };
 		C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = /Library/Frameworks/BWToolkitFramework.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +237,24 @@
 				775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */,
 				C9F8FA3310420E9500CFE30A /* BWToolkitFramework.framework in Frameworks */,
 				C97D081B1043A1F000F6BBCC /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9217D2D111F133D00401AD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92191D9112FBB4A00401AD4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9217F5D1121161000401AD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9218E4E11299BFF00401AD4 /* BWToolkitFramework.framework in Frameworks */,
+				C92188E3112735AE00401AD4 /* OpenGL.framework in Frameworks */,
+				C9217F7F112116CB00401AD4 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +288,8 @@
 			children = (
 				8D15AC370486D014006FF6A4 /* Spark.app */,
 				514E9DF9081EBF9C009B8CD9 /* Spark.mdimporter */,
+				C9217D30111F133D00401AD4 /* PCBFabTest.octest */,
+				C9217F5F1121161000401AD4 /* SparkViewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,40 +297,19 @@
 		2A37F4AAFDCFA73011CA2CEA /* Spark */ = {
 			isa = PBXGroup;
 			children = (
-				C9A11B70109C9366003EC1CF /* Views */,
-				C988C1151049EE7F00D797C1 /* Controllers */,
-				C988C0F71049EAC700D797C1 /* Visualization */,
-				E1B74B1A0667B4A90069E3BA /* Models */,
+				C92190FC112FB8F300401AD4 /* Controllers */,
+				C9219132112FB8F400401AD4 /* Models */,
+				C9219169112FB8F400401AD4 /* Resources */,
+				C921917D112FB8F400401AD4 /* Visualization */,
 				514E9E0C081EC698009B8CD9 /* Importer */,
+				C92190F9112FB8F300401AD4 /* Class Extensions */,
+				C92191A1112FBA5800401AD4 /* Test */,
+				C9219167112FB8F400401AD4 /* Other Sources */,
 				C9F06F561085873F00362CAE /* Stock Documents */,
-				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
-				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 			);
 			name = Spark;
-			sourceTree = "<group>";
-		};
-		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32DBCF750370BD2300C91783 /* Spark_Prefix.pch */,
-				2A37F4B0FDCFA73011CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2F7446BF0DB6CCE400F9684A /* MainMenu.xib */,
-				2F7446C10DB6CCE400F9684A /* SparkDocument.xib */,
-				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
-				8D15AC360486D014006FF6A4 /* Spark-Info.plist */,
-				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
-				C9A11B74109C93F9003EC1CF /* NewComponent.xib */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
@@ -269,104 +332,293 @@
 			name = Importer;
 			sourceTree = "<group>";
 		};
-		C97D068A10421AD300F6BBCC /* Views */ = {
+		C92190F9112FB8F300401AD4 /* Class Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C97D068B10421B3300F6BBCC /* SparkScrollView.h */,
-				C97D068C10421B3300F6BBCC /* SparkScrollView.m */,
-				C97D07F110439B6900F6BBCC /* SparkOpenGLView.h */,
-				C97D07F210439B6900F6BBCC /* SparkOpenGLView.m */,
-				C99AA2BE104F823000D2B825 /* SparkElementView.h */,
-				C99AA2BF104F823000D2B825 /* SparkElementView.m */,
+				C92190FA112FB8F300401AD4 /* NSScannerExtensions.h */,
+				C92190FB112FB8F300401AD4 /* NSScannerExtensions.m */,
 			);
-			name = Views;
+			path = "Class Extensions";
 			sourceTree = "<group>";
 		};
-		C982CC131058ABB300B54F39 /* UI-Related */ = {
+		C92190FC112FB8F300401AD4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C982CC151058ABE000B54F39 /* ProjectNode.h */,
-				C982CC161058ABE000B54F39 /* ProjectNode.m */,
-				C982CCBB1058BA2200B54F39 /* SchematicNode.h */,
-				C982CCBC1058BA2200B54F39 /* SchematicNode.m */,
-				C9F06ED81084325B00362CAE /* PCBNode.h */,
-				C9F06ED91084325B00362CAE /* PCBNode.m */,
-				C9F06EEA1084334400362CAE /* CAMNode.h */,
-				C9F06EEB1084334400362CAE /* CAMNode.m */,
+				C9219191112FB9F300401AD4 /* Application */,
+				C921910A112FB8F300401AD4 /* Window */,
+				C9219103112FB8F300401AD4 /* View */,
+				C9219194112FB9F300401AD4 /* SPGerberParser.h */,
+				C9219195112FB9F300401AD4 /* SPGerberParser.m */,
+				C92190FD112FB8F300401AD4 /* SparkDefinitionParser.h */,
+				C92190FE112FB8F300401AD4 /* SparkDefinitionParser.m */,
+				C92190FF112FB8F300401AD4 /* SparkGerberRenderer.h */,
+				C9219100112FB8F300401AD4 /* SparkGerberRenderer.m */,
 			);
-			name = "UI-Related";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		C988C0F71049EAC700D797C1 /* Visualization */ = {
+		C9219103112FB8F300401AD4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C988C0FF1049EB9500D797C1 /* SPGeometry.h */,
-				C988C0FD1049EB9500D797C1 /* SPFacet.h */,
-				C988C0FE1049EB9500D797C1 /* SPFacet.m */,
-				C97D068A10421AD300F6BBCC /* Views */,
+				C9219104112FB8F300401AD4 /* GraphicalController.h */,
+				C9219105112FB8F300401AD4 /* GraphicalController.m */,
+				C9219106112FB8F300401AD4 /* SchematicController.h */,
+				C9219107112FB8F300401AD4 /* SchematicController.m */,
+				C9219108112FB8F300401AD4 /* SparkCAMViewController.h */,
+				C9219109112FB8F300401AD4 /* SparkCAMViewController.m */,
 			);
-			name = Visualization;
+			path = View;
 			sourceTree = "<group>";
 		};
-		C988C1151049EE7F00D797C1 /* Controllers */ = {
+		C921910A112FB8F300401AD4 /* Window */ = {
 			isa = PBXGroup;
 			children = (
-				C9DFAA4A1052155E006698D9 /* Window Controllers */,
-				C9DFAA4B10521570006698D9 /* View Controllers */,
+				C921910B112FB8F300401AD4 /* SparkNewComponentWindowController.h */,
+				C921910C112FB8F300401AD4 /* SparkNewComponentWindowController.m */,
+				C921910D112FB8F300401AD4 /* SparkViewerWindowController.h */,
+				C921910E112FB8F300401AD4 /* SparkViewerWindowController.m */,
+				C921910F112FB8F300401AD4 /* SparkWindowController.h */,
+				C9219110112FB8F300401AD4 /* SparkWindowController.m */,
+				C9219111112FB8F300401AD4 /* SPImportWindowController.h */,
+				C9219112112FB8F300401AD4 /* SPImportWindowController.m */,
+				C9219113112FB8F300401AD4 /* SPWindowController.h */,
+				C9219114112FB8F300401AD4 /* SPWindowController.m */,
 			);
-			name = Controllers;
+			path = Window;
 			sourceTree = "<group>";
 		};
-		C9A11B70109C9366003EC1CF /* Views */ = {
+		C9219132112FB8F400401AD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9219133112FB8F400401AD4 /* Fabrication */,
+				C921913E112FB8F400401AD4 /* Graphical */,
+				C9219147112FB8F400401AD4 /* Layout */,
+				C9219153112FB8F400401AD4 /* Structural */,
+				C921915E112FB8F400401AD4 /* UI */,
+				C921914E112FB8F400401AD4 /* SparkDocument.h */,
+				C921914F112FB8F400401AD4 /* SparkDocument.m */,
+				C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */,
+				C9219151112FB8F400401AD4 /* SparkViewerDocument.h */,
+				C9219152112FB8F400401AD4 /* SparkViewerDocument.m */,
 			);
-			name = Views;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		C9DFAA4A1052155E006698D9 /* Window Controllers */ = {
+		C9219133112FB8F400401AD4 /* Fabrication */ = {
 			isa = PBXGroup;
 			children = (
-				C988C1161049EEC300D797C1 /* SparkWindowController.h */,
-				C988C1171049EEC300D797C1 /* SparkWindowController.m */,
-				C9A11B77109C952D003EC1CF /* SparkNewComponentWindowController.h */,
-				C9A11B78109C952D003EC1CF /* SparkNewComponentWindowController.m */,
+				C921920B112FBF4500401AD4 /* FunctionCodes */,
+				C9219134112FB8F400401AD4 /* PFGerberApertureDefinition.h */,
+				C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */,
+				C9219136112FB8F400401AD4 /* PFGerberApertureMacro.h */,
+				C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */,
+				C9219138112FB8F400401AD4 /* PFGerberCoordinate.h */,
+				C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */,
+				C921913A112FB8F400401AD4 /* PFGerberFormat.h */,
+				C921913B112FB8F400401AD4 /* PFGerberFormat.m */,
 			);
-			name = "Window Controllers";
+			path = Fabrication;
 			sourceTree = "<group>";
 		};
-		C9DFAA4B10521570006698D9 /* View Controllers */ = {
+		C921913E112FB8F400401AD4 /* Graphical */ = {
 			isa = PBXGroup;
 			children = (
-				C988C641104CC83600D797C1 /* GraphicalController.h */,
-				C988C642104CC83600D797C1 /* GraphicalController.m */,
-				C988C11A1049EF3B00D797C1 /* SchematicController.h */,
-				C988C11B1049EF3B00D797C1 /* SchematicController.m */,
+				C921913F112FB8F400401AD4 /* Arc.h */,
+				C9219140112FB8F400401AD4 /* Arc.m */,
+				C9219141112FB8F400401AD4 /* GraphicalRep.h */,
+				C9219142112FB8F400401AD4 /* GraphicalRep.m */,
+				C9219143112FB8F400401AD4 /* Primitive.h */,
+				C9219144112FB8F400401AD4 /* Primitive.m */,
+				C9219145112FB8F400401AD4 /* Quad.h */,
+				C9219146112FB8F400401AD4 /* Quad.m */,
 			);
-			name = "View Controllers";
+			path = Graphical;
 			sourceTree = "<group>";
 		};
-		C9F06F081084D2E800362CAE /* Data */ = {
+		C9219147112FB8F400401AD4 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				C9F06F351084D60E00362CAE /* Definition.h */,
-				C9F06F361084D60E00362CAE /* Definition.m */,
-				C9F06F371084D60E00362CAE /* Primitive.h */,
-				C9F06F381084D60E00362CAE /* Primitive.m */,
-				C9F06F391084D60E00362CAE /* SymbolDefinition.h */,
-				C9F06F3A1084D60E00362CAE /* SymbolDefinition.m */,
-				C9F06F3B1084D60E00362CAE /* GraphicalRep.h */,
-				C9F06F3C1084D60E00362CAE /* GraphicalRep.m */,
-				C9F06F411084D78300362CAE /* Quad.h */,
-				C9F06F421084D78300362CAE /* Quad.m */,
-				C9A1196B10860F43003EC1CF /* Symbol.h */,
-				C9A1196C10860F43003EC1CF /* Symbol.m */,
-				C9A1196D10860F43003EC1CF /* DesignElement.h */,
-				C9A1196E10860F43003EC1CF /* DesignElement.m */,
-				C9A1196F10860F43003EC1CF /* SparkComponent.h */,
-				C9A1197010860F43003EC1CF /* SparkComponent.m */,
+				C9219148112FB8F400401AD4 /* SparkComponent.h */,
+				C9219149112FB8F400401AD4 /* SparkComponent.m */,
+				C921914A112FB8F400401AD4 /* Symbol.h */,
+				C921914B112FB8F400401AD4 /* Symbol.m */,
+				C921914C112FB8F400401AD4 /* SymbolDefinition.h */,
+				C921914D112FB8F400401AD4 /* SymbolDefinition.m */,
 			);
-			name = Data;
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		C9219153112FB8F400401AD4 /* Structural */ = {
+			isa = PBXGroup;
+			children = (
+				C9219154112FB8F400401AD4 /* CAMLayer.h */,
+				C9219155112FB8F400401AD4 /* CAMLayer.m */,
+				C9219156112FB8F400401AD4 /* Definition.h */,
+				C9219157112FB8F400401AD4 /* Definition.m */,
+				C9219158112FB8F400401AD4 /* DesignElement.h */,
+				C9219159112FB8F400401AD4 /* DesignElement.m */,
+				C921915A112FB8F400401AD4 /* DesignSurface.h */,
+				C921915B112FB8F400401AD4 /* DesignSurface.m */,
+				C921915C112FB8F400401AD4 /* FreeElement.h */,
+				C921915D112FB8F400401AD4 /* FreeElement.m */,
+			);
+			path = Structural;
+			sourceTree = "<group>";
+		};
+		C921915E112FB8F400401AD4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C921915F112FB8F400401AD4 /* CAMNode.h */,
+				C9219160112FB8F400401AD4 /* CAMNode.m */,
+				C9219161112FB8F400401AD4 /* PCBNode.h */,
+				C9219162112FB8F400401AD4 /* PCBNode.m */,
+				C9219163112FB8F400401AD4 /* SchematicNode.h */,
+				C9219164112FB8F400401AD4 /* SchematicNode.m */,
+				C9219165112FB8F400401AD4 /* SPProjectNode.h */,
+				C9219166112FB8F400401AD4 /* SPProjectNode.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C9219167112FB8F400401AD4 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C92191DF112FBC1E00401AD4 /* SPFabrication.h */,
+				C92191CD112FBAD800401AD4 /* main.m */,
+				C92191CE112FBAD800401AD4 /* SparkViewer_Prefix.pch */,
+				C9219168112FB8F400401AD4 /* Spark_Prefix.pch */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		C9219169112FB8F400401AD4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C921916A112FB8F400401AD4 /* Credits.rtf */,
+				C921916C112FB8F400401AD4 /* ImportWindow.xib */,
+				C921916E112FB8F400401AD4 /* InfoPlist.strings */,
+				C9219170112FB8F400401AD4 /* MainMenu.xib */,
+				C9219172112FB8F400401AD4 /* NewComponent.xib */,
+				C9219174112FB8F400401AD4 /* SparkDocument.xib */,
+				C9219176112FB8F400401AD4 /* SparkViewerDocument.xib */,
+				C9219178112FB8F400401AD4 /* SparkViewerMainMenu.xib */,
+				C921917B112FB8F400401AD4 /* Spark-Info.plist */,
+				C921917C112FB8F400401AD4 /* SparkViewer-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C921917D112FB8F400401AD4 /* Visualization */ = {
+			isa = PBXGroup;
+			children = (
+				C921917E112FB8F400401AD4 /* SparkVisualization.h */,
+				C921917F112FB8F400401AD4 /* SPFacet.h */,
+				C9219180112FB8F400401AD4 /* SPFacet.m */,
+				C9219181112FB8F400401AD4 /* SPGeometry.h */,
+				C9219182112FB8F400401AD4 /* Views */,
+			);
+			path = Visualization;
+			sourceTree = "<group>";
+		};
+		C9219182112FB8F400401AD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9219183112FB8F400401AD4 /* SparkElementView.h */,
+				C9219184112FB8F400401AD4 /* SparkElementView.m */,
+				C9219185112FB8F400401AD4 /* SparkOpenGLView.h */,
+				C9219186112FB8F400401AD4 /* SparkOpenGLView.m */,
+				C9219187112FB8F400401AD4 /* SparkScrollView.h */,
+				C9219188112FB8F400401AD4 /* SparkScrollView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9219191112FB9F300401AD4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C9219192112FB9F300401AD4 /* SparkViewerAppDelegate.h */,
+				C9219193112FB9F300401AD4 /* SparkViewerAppDelegate.m */,
+			);
+			name = Application;
+			path = application;
+			sourceTree = "<group>";
+		};
+		C92191A1112FBA5800401AD4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C92191A2112FBA5800401AD4 /* GerberParserTest */,
+				C92191A8112FBA5800401AD4 /* Test Documents */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		C92191A2112FBA5800401AD4 /* GerberParserTest */ = {
+			isa = PBXGroup;
+			children = (
+				C92191A3112FBA5800401AD4 /* GerberParserTest-Info.plist */,
+				C92191A4112FBA5800401AD4 /* MockGerberParserDelegate.h */,
+				C92191A5112FBA5800401AD4 /* MockGerberParserDelegate.m */,
+				C92191A6112FBA5800401AD4 /* SPGerberParserTest.h */,
+				C92191A7112FBA5800401AD4 /* SPGerberParserTest.m */,
+			);
+			path = GerberParserTest;
+			sourceTree = "<group>";
+		};
+		C92191A8112FBA5800401AD4 /* Test Documents */ = {
+			isa = PBXGroup;
+			children = (
+				C92191A9112FBA5800401AD4 /* Example Excellion */,
+				C92191AB112FBA5800401AD4 /* Example Gerbers */,
+				C92191B6112FBA5800401AD4 /* Test Gerbers */,
+			);
+			path = "Test Documents";
+			sourceTree = "<group>";
+		};
+		C92191A9112FBA5800401AD4 /* Example Excellion */ = {
+			isa = PBXGroup;
+			children = (
+				C92191AA112FBA5800401AD4 /* Break Out Board V2_7.TXT */,
+			);
+			path = "Example Excellion";
+			sourceTree = "<group>";
+		};
+		C92191AB112FBA5800401AD4 /* Example Gerbers */ = {
+			isa = PBXGroup;
+			children = (
+				C92191AC112FBA5800401AD4 /* Break Out Board V2_7.apr */,
+				C92191AD112FBA5800401AD4 /* Break Out Board V2_7.DRR */,
+				C92191AE112FBA5800401AD4 /* Break Out Board V2_7.GBL */,
+				C92191AF112FBA5800401AD4 /* Break Out Board V2_7.GBO */,
+				C92191B0112FBA5800401AD4 /* Break Out Board V2_7.GBS */,
+				C92191B1112FBA5800401AD4 /* Break Out Board V2_7.GTO */,
+				C92191B2112FBA5800401AD4 /* Break Out Board V2_7.GTS */,
+				C92191B3112FBA5800401AD4 /* gerber_document_boxes.GTL */,
+				C92191B4112FBA5800401AD4 /* protel_output.GM1 */,
+				C92191B5112FBA5800401AD4 /* protel_output.GTL */,
+			);
+			path = "Example Gerbers";
+			sourceTree = "<group>";
+		};
+		C92191B6112FBA5800401AD4 /* Test Gerbers */ = {
+			isa = PBXGroup;
+			children = (
+				C92191B7112FBA5800401AD4 /* aperture_macro.gtl */,
+				C92191B8112FBA5800401AD4 /* basic_document.GTL */,
+				C92191B9112FBA5800401AD4 /* basic_document_without_percents_on_each_line.gtl */,
+				C92191BA112FBA5800401AD4 /* image_polarity.gtl */,
+				C92191BB112FBA5800401AD4 /* layer_polarity.gtl */,
+				C92191BC112FBA5800401AD4 /* single_arc_coordinate.GTL */,
+			);
+			path = "Test Gerbers";
+			sourceTree = "<group>";
+		};
+		C921920B112FBF4500401AD4 /* FunctionCodes */ = {
+			isa = PBXGroup;
+			children = (
+				C921913C112FB8F400401AD4 /* PFGerberFunctionCode.h */,
+				C921913D112FB8F400401AD4 /* PFGerberFunctionCode.m */,
+			);
+			name = FunctionCodes;
 			sourceTree = "<group>";
 		};
 		C9F06F561085873F00362CAE /* Stock Documents */ = {
@@ -383,20 +635,6 @@
 				C9F06F591085877800362CAE /* resistor.xml */,
 			);
 			name = Symbols;
-			sourceTree = "<group>";
-		};
-		E1B74B1A0667B4A90069E3BA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				775BDEF0067A8BF0009058FE /* SparkDocument.xcdatamodel */,
-				C9F06F081084D2E800362CAE /* Data */,
-				C982CC131058ABB300B54F39 /* UI-Related */,
-				2A37F4AEFDCFA73011CA2CEA /* SparkDocument.h */,
-				2A37F4ACFDCFA73011CA2CEA /* SparkDocument.m */,
-				C9F06F6010858D3500362CAE /* SparkDefinitionParser.h */,
-				C9F06F6110858D3500362CAE /* SparkDefinitionParser.m */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +678,42 @@
 			productReference = 8D15AC370486D014006FF6A4 /* Spark.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C9217D2F111F133D00401AD4 /* GerberParserTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9217D34111F133E00401AD4 /* Build configuration list for PBXNativeTarget "GerberParserTest" */;
+			buildPhases = (
+				C9217D2B111F133D00401AD4 /* Resources */,
+				C9217D2C111F133D00401AD4 /* Sources */,
+				C9217D2D111F133D00401AD4 /* Frameworks */,
+				C9217D2E111F133D00401AD4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GerberParserTest;
+			productName = PCBFabTest;
+			productReference = C9217D30111F133D00401AD4 /* PCBFabTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		C9217F5E1121161000401AD4 /* SparkViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9217F641121161200401AD4 /* Build configuration list for PBXNativeTarget "SparkViewer" */;
+			buildPhases = (
+				C9217F5B1121161000401AD4 /* Resources */,
+				C9217F5C1121161000401AD4 /* Sources */,
+				C9217F5D1121161000401AD4 /* Frameworks */,
+				C9218E1311299BA600401AD4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkViewer;
+			productName = SparkViewer;
+			productReference = C9217F5F1121161000401AD4 /* SparkViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -454,6 +728,8 @@
 			targets = (
 				8D15AC270486D014006FF6A4 /* Spark */,
 				514E9DF8081EBF9C009B8CD9 /* Spark Spotlight Importer */,
+				C9217D2F111F133D00401AD4 /* GerberParserTest */,
+				C9217F5E1121161000401AD4 /* SparkViewer */,
 			);
 		};
 /* End PBXProject section */
@@ -470,15 +746,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
-				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
-				2F7446C30DB6CCE400F9684A /* MainMenu.xib in Resources */,
-				2F7446C40DB6CCE400F9684A /* SparkDocument.xib in Resources */,
-				C9A11B75109C93F9003EC1CF /* NewComponent.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9217D2B111F133D00401AD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9217F5B1121161000401AD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9217D2E111F133D00401AD4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		514E9DF6081EBF9C009B8CD9 /* Sources */ = {
@@ -494,30 +795,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775BDEF1067A8BF0009058FE /* SparkDocument.xcdatamodel in Sources */,
-				8D15AC310486D014006FF6A4 /* SparkDocument.m in Sources */,
-				8D15AC320486D014006FF6A4 /* main.m in Sources */,
-				C97D068D10421B3300F6BBCC /* SparkScrollView.m in Sources */,
-				C97D07F310439B6900F6BBCC /* SparkOpenGLView.m in Sources */,
-				C988C10B1049EB9600D797C1 /* SPFacet.m in Sources */,
-				C988C1181049EEC300D797C1 /* SparkWindowController.m in Sources */,
-				C988C11C1049EF3B00D797C1 /* SchematicController.m in Sources */,
-				C988C643104CC83600D797C1 /* GraphicalController.m in Sources */,
-				C99AA2C0104F823000D2B825 /* SparkElementView.m in Sources */,
-				C982CC171058ABE000B54F39 /* ProjectNode.m in Sources */,
-				C982CCBD1058BA2200B54F39 /* SchematicNode.m in Sources */,
-				C9F06EDA1084325B00362CAE /* PCBNode.m in Sources */,
-				C9F06EEC1084334400362CAE /* CAMNode.m in Sources */,
-				C9F06F3D1084D60E00362CAE /* Definition.m in Sources */,
-				C9F06F3E1084D60E00362CAE /* Primitive.m in Sources */,
-				C9F06F3F1084D60E00362CAE /* SymbolDefinition.m in Sources */,
-				C9F06F401084D60E00362CAE /* GraphicalRep.m in Sources */,
-				C9F06F431084D78300362CAE /* Quad.m in Sources */,
-				C9F06F6210858D3500362CAE /* SparkDefinitionParser.m in Sources */,
-				C9A1197110860F43003EC1CF /* Symbol.m in Sources */,
-				C9A1197210860F43003EC1CF /* DesignElement.m in Sources */,
-				C9A1197310860F43003EC1CF /* SparkComponent.m in Sources */,
-				C9A11B79109C952D003EC1CF /* SparkNewComponentWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9217D2C111F133D00401AD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9219208112FBE9F00401AD4 /* NSScannerExtensions.m in Sources */,
+				C92191FB112FBDC400401AD4 /* PFGerberApertureDefinition.m in Sources */,
+				C92191FC112FBDC400401AD4 /* PFGerberApertureMacro.m in Sources */,
+				C92191FD112FBDC400401AD4 /* PFGerberCoordinate.m in Sources */,
+				C92191FE112FBDC400401AD4 /* PFGerberFormat.m in Sources */,
+				C92191FF112FBDC400401AD4 /* PFGerberFunctionCode.m in Sources */,
+				C92191F2112FBD8500401AD4 /* SPGerberParser.m in Sources */,
+				C92191D7112FBB3900401AD4 /* SPGerberParserTest.m in Sources */,
+				C92191D8112FBB3C00401AD4 /* MockGerberParserDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9217F5C1121161000401AD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9219196112FB9F300401AD4 /* SparkViewerAppDelegate.m in Sources */,
+				C9219197112FB9F300401AD4 /* SPGerberParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,44 +834,68 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+		C921916A112FB8F400401AD4 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C1660FE840EACC02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A37F4BAFDCFA73011CA2CEA /* English */,
+				C921916B112FB8F400401AD4 /* English */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		2F7446BF0DB6CCE400F9684A /* MainMenu.xib */ = {
+		C921916C112FB8F400401AD4 /* ImportWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2F7446C00DB6CCE400F9684A /* English */,
+				C921916D112FB8F400401AD4 /* English */,
+			);
+			name = ImportWindow.xib;
+			sourceTree = "<group>";
+		};
+		C921916E112FB8F400401AD4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C921916F112FB8F400401AD4 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C9219170112FB8F400401AD4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9219171112FB8F400401AD4 /* English */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		2F7446C10DB6CCE400F9684A /* SparkDocument.xib */ = {
+		C9219172112FB8F400401AD4 /* NewComponent.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2F7446C20DB6CCE400F9684A /* English */,
+				C9219173112FB8F400401AD4 /* English */,
+			);
+			name = NewComponent.xib;
+			sourceTree = "<group>";
+		};
+		C9219174112FB8F400401AD4 /* SparkDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9219175112FB8F400401AD4 /* English */,
 			);
 			name = SparkDocument.xib;
 			sourceTree = "<group>";
 		};
-		C9A11B74109C93F9003EC1CF /* NewComponent.xib */ = {
+		C9219176112FB8F400401AD4 /* SparkViewerDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9A11B72109C93F0003EC1CF /* English */,
+				C9219177112FB8F400401AD4 /* English */,
 			);
-			name = NewComponent.xib;
+			name = SparkViewerDocument.xib;
+			sourceTree = "<group>";
+		};
+		C9219178112FB8F400401AD4 /* SparkViewerMainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9219179112FB8F400401AD4 /* English */,
+			);
+			name = SparkViewerMainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -679,6 +1005,114 @@
 			};
 			name = Release;
 		};
+		C9217D32111F133E00401AD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/build/Debug\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Test/GerberParserTest/GerberParserTest-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PCBFabTest;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C9217D33111F133E00401AD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/build/Debug\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "PCBFabTest-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PCBFabTest;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C9217F621121161200401AD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SparkViewer/Resources/SparkViewer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SparkViewer;
+			};
+			name = Debug;
+		};
+		C9217F631121161200401AD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SparkViewer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SparkViewer;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -705,6 +1139,24 @@
 			buildConfigurations = (
 				26FC0ACF0875C91100E6366F /* Debug */,
 				26FC0AD00875C91100E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9217D34111F133E00401AD4 /* Build configuration list for PBXNativeTarget "GerberParserTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9217D32111F133E00401AD4 /* Debug */,
+				C9217D33111F133E00401AD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9217F641121161200401AD4 /* Build configuration list for PBXNativeTarget "SparkViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9217F621121161200401AD4 /* Debug */,
+				C9217F631121161200401AD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -28,6 +28,11 @@ static SPVec SPMakeVec(GLdouble x, GLdouble y, GLdouble z)
 	return vec;
 }
 
+static GLdouble SPDistanceBetweenVec(SPVec v1, SPVec v2)
+{
+    return pow(pow(v2.x - v1.x, 2.0) + pow(v2.y - v1.y, 2.0), 0.5);
+}
+
 static BOOL SPValidVec(SPVec v)
 {
 	if (isnan(v.x) || isnan(v.y) || isnan(v.z))

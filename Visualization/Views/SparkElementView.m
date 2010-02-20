@@ -32,15 +32,15 @@
 
 - (id)initWithFrame:(NSRect)frame
 {
-	self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame];
 	if (self)
 	{
 		// init view control
 		cameraEyePosition = SPMakeVec(0, 0, 35.0);
-		sceneCenter = SPMakeVec(0, 0, 0);
-		rotation = SPMakeVec(0, 0, 0);
-		
-		orientationMarkers = true;
+		rotation          = SPMakeVec(0, 0, 0);
+        zoom              = SPMakeVec(0, 0, 0);
+        
+        orientationMarkers = true;
 		
 		// init picking
 		elementIndexDictionary = [NSMutableDictionary new];
@@ -61,6 +61,8 @@
 
 #pragma mark Accessors
 @synthesize orientationMarkers;
+@synthesize zoom;
+@synthesize sceneCenter;
 
 - (id <SparkElementViewDelegate>)delegate
 {
@@ -90,11 +92,9 @@
 }
 - (IBAction)scrolledVertically:(id)sender
 {
-	//cameraEyePosition.y = ([sender doubleValue] - 0.5) * -50.0;
-	
-	rotation.y = ([sender doubleValue] - 0.5) * 360.0;
-	
-	[self setNeedsDisplay:true];
+    rotation.y = ([sender doubleValue] - 0.5) * 360.0;
+
+    [self setNeedsDisplay:true];
 }
 
 - (void)reloadData
@@ -103,6 +103,8 @@
 	elements = nil;
 	
 	[self loadElements];
+    
+    [self setNeedsDisplay:true];
 }
 
 
@@ -155,6 +157,14 @@
 	{
 		[self selectElement:element byExtendingSelection:commandKeyPressed];
 	}
+}
+
+- (void)scrollWheel:(NSEvent *)theEvent
+{
+    // up/down motions mean zoom in/out
+    zoom.z += [theEvent deltaY];
+    
+    [self setNeedsDisplay:YES];
 }
 
 #pragma mark SparkOpenGLView Overrides
@@ -221,13 +231,18 @@
 			
 			[self trackElement:element];
 		}
+        
+        if ([delegate respondsToSelector:@selector(elementViewDidLoadElements:)])
+        {
+            [delegate elementViewDidLoadElements:self];
+        }
 	}
 }
 
 #pragma mark Picking
 - (id)keyAtLocation:(NSPoint)location
 {
-	GLbyte		pixel[3];
+	GLbyte pixel[3];
 	
 	pixel[0] = pixel[1] = pixel[2] = 0;
 	
@@ -241,10 +256,10 @@
 }
 - (void)trackElement:(DesignElement*)element
 {
-	NSString*	key;
+	NSString* key;
 	
-	key = [NSString stringWithFormat:@"%x %x %x", baseColorIndex[0], baseColorIndex[1], baseColorIndex[2]];
-	
+    key = [NSString stringWithFormat:@"%x %x %x", baseColorIndex[0], baseColorIndex[1], baseColorIndex[2]];
+
 	[element prepareForTrackingWithRed:baseColorIndex[0] green:baseColorIndex[1] blue:baseColorIndex[2]];
 	[elementIndexDictionary setObject:element forKey:key];
 	
@@ -358,16 +373,19 @@
 {
 	GraphicalRep* model;
 	
-	gluLookAt(cameraEyePosition.x, cameraEyePosition.y, cameraEyePosition.z, sceneCenter.x, sceneCenter.y, sceneCenter.z, 0, 1, 0);
+	gluLookAt(cameraEyePosition.x, cameraEyePosition.y, cameraEyePosition.z, 0.0, 0.0, 0.0, 0, 1, 0);
 	
 	if (orientationMarkers && !pickingEnabled)
 		[self drawOrientationMarkers];
 	
+    [self loadElements];
+    
+    glTranslated(zoom.x, zoom.y, zoom.z);
 	glRotated(rotation.x, 0.0, 1.0, 0.0);
 	glRotated(rotation.y, 1.0, 0.0, 0.0);
 	
-	[self loadElements];
-	
+    glTranslated(sceneCenter.x, sceneCenter.y, sceneCenter.z);
+    
 	for (DesignElement* element in elements)
 	{
 		model = [element graphicalRep];

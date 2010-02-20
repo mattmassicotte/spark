@@ -1,0 +1,23 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: Break Out Board V2_7.PCBDOC   1/11/2006  6:23:14 PM
+---------------------------------------------------------------------------
+
+
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII File : NCDrillOutput.TXT
+EIA File   : NCDrillOutput.DRL
+
+Tool         Hole Size          Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        28mil (0.7112mm)         43               19.72 Inch (500.89 mm)
+T2        35mil (0.889mm)          80               14.33 Inch (364.09 mm)
+T3        42mil (1.0668mm)         68               18.44 Inch (468.26 mm)
+T4        52mil (1.3208mm)         4                4.60 Inch (116.93 mm)
+T5        73mil (1.8542mm)         20               11.00 Inch (279.39 mm)
+T6        125mil (3.175mm)         6                10.08 Inch (255.94 mm)
+T7        125mil (3.175mm)         31        NPTH   19.01 Inch (482.76 mm)
+---------------------------------------------------------------------------
+Totals                             252              97.17 Inch (2468.24 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

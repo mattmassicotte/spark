@@ -11,27 +11,30 @@
 #import "SPGeometry.h"
 
 @protocol SparkElementViewDelegate, SparkElementViewDataSource;
-@class DesignElement, Primitive;
+@class    DesignElement, Primitive;
 
 @interface SparkElementView : SparkOpenGLView
 {
-	SPVec		cameraEyePosition;
-	SPVec		sceneCenter;
-	SPVec		rotation;
+	SPVec cameraEyePosition;
+	SPVec sceneCenter;
+	SPVec rotation;
+    SPVec zoom;
 	
-	bool		orientationMarkers;
+	bool  orientationMarkers;
 	
-	NSArray*				elements;
-	NSMutableSet*			selectionSet;
+	NSArray*             elements;
+	NSMutableSet*        selectionSet;
 	
-	NSMutableDictionary*	elementIndexDictionary;
-	GLubyte					baseColorIndex[3];
+	NSMutableDictionary* elementIndexDictionary;
+	GLubyte              baseColorIndex[3];
 }
 
-@property (assign)	id <SparkElementViewDelegate>	delegate;
-@property (assign)	id <SparkElementViewDataSource> dataSource;
+@property (assign) id <SparkElementViewDelegate>   delegate;
+@property (assign) id <SparkElementViewDataSource> dataSource;
 
-@property (assign)	bool	orientationMarkers;
+@property (assign) bool                            orientationMarkers;
+@property (assign) SPVec                           zoom;
+@property (nonatomic) SPVec                        sceneCenter;
 
 - (IBAction)scrolledHorizontally:(id)sender;
 - (IBAction)scrolledVertically:(id)sender;
@@ -42,6 +45,8 @@
 
 @protocol SparkElementViewDelegate <NSObject>
 @optional
+
+- (void)elementViewDidLoadElements:(SparkElementView*)view;
 
 - (bool)elementView:(SparkElementView*)view shouldSelectElement:(DesignElement*)element;
 - (bool)elementView:(SparkElementView*)view shouldSelectPrimitive:(Primitive*)primitive ofElement:(DesignElement*)element;

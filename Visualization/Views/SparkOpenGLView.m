@@ -10,7 +10,10 @@
 #import <OpenGL/OpenGL.h>
 #import <OpenGL/glu.h>
 
-@interface SparkOpenGLView (PrivateMethods)
+@interface SparkOpenGLView ()
+
+- (void)projection;
+- (void)modelview;
 
 + (NSOpenGLPixelFormat*)defaultPixelFormat;
 
@@ -157,9 +160,6 @@
 //	GLfloat*	colorArray;
 //	GLfloat*	normalArray;
 }
-@end
-
-@implementation SparkOpenGLView (PrivateMethods)
 
 + (NSOpenGLPixelFormat*)defaultPixelFormat
 {
