@@ -10,20 +10,6 @@
 
 @implementation SPGerberParserBasicTest
 
-- (void)setUp
-{
-    mockDelegate = [MockGerberParserDelegate new];
-}
-
-- (void)tearDown
-{
-    [mockDelegate release];
-    mockDelegate = nil;
-    
-    [parser release];
-    parser = nil;
-}
-
 - (void)testBasicDocument
 {
 	[self loadTestDocument:@"/Test Gerbers/basic_document.GTL"];

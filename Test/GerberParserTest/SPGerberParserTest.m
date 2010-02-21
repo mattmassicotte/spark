@@ -10,6 +10,20 @@
 
 @implementation SPGerberParserTest
 
+- (void)setUp
+{
+    mockDelegate = [MockGerberParserDelegate new];
+}
+
+- (void)tearDown
+{
+    [mockDelegate release];
+    mockDelegate = nil;
+    
+    [parser release];
+    parser = nil;
+}
+
 - (void)loadDocument:(NSString*)path
 {
 	parser = [[SPGerberParser alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]];

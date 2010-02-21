@@ -14,6 +14,8 @@
 {
     [self loadTestDocument:@"/Example Gerbers/protel_output.GM1"];
     
+    NSLog(@"%@", mockDelegate.elements);
+    
     STAssertTrue([[mockDelegate elementAtIndex:1] usingInches], @"usingInches should be true");
     
     AssertGCode([mockDelegate elementAtIndex:2], 70);
