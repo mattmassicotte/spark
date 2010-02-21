@@ -1,5 +1,5 @@
 //
-//  CAMNode.h
+//  SPPCBLayerNode.h
 //  Spark
 //
 //  Created by Matt Massicotte on 10/12/09.
@@ -9,8 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import "SPProjectNode.h"
 
-@interface CAMNode : SPProjectNode
+@class PCBLayer;
+
+@interface SPPCBLayerNode : SPProjectNode
 {
+    PCBLayer* pcbLayer;
 }
+
+@property (nonatomic, retain) PCBLayer* pcbLayer;
 
 @end

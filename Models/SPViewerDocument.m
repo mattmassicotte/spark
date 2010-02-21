@@ -7,7 +7,7 @@
 //
 
 #import "SPViewerDocument.h"
-#import "SparkViewerWindowController.h"
+#import "SPViewerWindowController.h"
 #import "SparkGerberRenderer.h"
 #import "SPImportWindowController.h"
 
@@ -31,17 +31,7 @@
 
 - (void)makeWindowControllers
 {
-	SparkViewerWindowController* windowController;
-	
-	windowController = [[SparkViewerWindowController alloc] initWithWindowNibName:[self windowNibName]];
-	[self addWindowController:windowController];
-	
-	[windowController release];
-}
-
-- (NSString *)windowNibName 
-{
-    return @"SPViewerDocument";
+	[self addWindowController:[[SPViewerWindowController new] autorelease]];
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 

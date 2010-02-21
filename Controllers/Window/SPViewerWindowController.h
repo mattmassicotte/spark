@@ -1,5 +1,5 @@
 //
-//  SparkViewerWindowController.h
+//  SPViewerWindowController.h
 //  Spark
 //
 //  Created by Matt Massicotte on 2/9/10.
@@ -11,7 +11,7 @@
 
 @class SparkCAMViewController;
 
-@interface SparkViewerWindowController : SPWindowController
+@interface SPViewerWindowController : SPWindowController
 {
     IBOutlet SparkCAMViewController* camViewController;
 }

@@ -10,21 +10,13 @@
 
 @interface SPProjectNode : NSObject
 {
-	NSString*				title;
-	NSManagedObjectContext*	managedObjectContext;
-	NSManagedObject*		managedObject;
-	NSArray*				children;
 }
 
-+ (id)nodeWithContext:(NSManagedObjectContext*)context;
++ (id)node;
 
-@property (retain)				NSManagedObjectContext*	managedObjectContext;
-@property (retain)				NSManagedObject*		managedObject;
-
-@property (copy)				NSString*	title;
-@property (assign, readonly)	BOOL		isHeader;
-@property (assign, readonly)	BOOL		isLeaf;
-@property (retain)				NSArray*	children;
-@property (assign, readonly)	NSString*	entityName;
+@property (nonatomic, retain, readonly) NSString* displayName;
+@property (nonatomic, assign, readonly) BOOL      isHeader;
+@property (nonatomic, assign, readonly) BOOL      isLeaf;
+@property (nonatomic, retain, readonly) NSArray*  children;
 
 @end
