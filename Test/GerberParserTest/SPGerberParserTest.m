@@ -11,8 +11,8 @@
 #import "SPFabrication.h"
 
 #define AssertFunctionCode(element, expectedType, expectedCode) \
-STAssertEquals([(PFGerberFunctionCode*)element type], expectedType, @""); \
-STAssertEquals([(PFGerberFunctionCode*)element code], (NSUInteger)expectedCode, @"")
+STAssertEquals([(SPGerberFunctionCode*)element type], expectedType, @""); \
+STAssertEquals([(SPGerberFunctionCode*)element code], (NSUInteger)expectedCode, @"")
 
 #define AssertLinearCoordinate(element, expectedX, expectedY, expectedExposure) \
 STAssertEquals([[(PFGerberCoordinate*)element x] doubleValue], expectedX, @""); \

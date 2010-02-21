@@ -6,9 +6,9 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "PFGerberFunctionCode.h"
+#import "SPGerberFunctionCode.h"
 
-@implementation PFGerberFunctionCode
+@implementation SPGerberFunctionCode
 
 @synthesize type;
 @synthesize code;

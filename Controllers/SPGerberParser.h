@@ -10,7 +10,7 @@
 
 @protocol SPGerberParserDelegate;
 
-@class PFGerberFormat, PFGerberApertureDefinition, PFGerberFunctionCode, PFGerberCoordinate;
+@class PFGerberFormat, PFGerberApertureDefinition, SPGerberFunctionCode, PFGerberCoordinate;
 
 @interface SPGerberParser : NSObject
 {
@@ -48,9 +48,9 @@
 - (void)parser:(SPGerberParser*)parser foundLayerPolarity:(BOOL)positivePolarity;
 - (void)parser:(SPGerberParser*)parser foundImagePolarity:(BOOL)positivePolarity;
 
-- (void)parser:(SPGerberParser*)parser foundFunctionCode:(PFGerberFunctionCode*)functionCode;
-- (void)parser:(SPGerberParser*)parser foundGCode:(PFGerberFunctionCode*)functionCode;
+- (void)parser:(SPGerberParser*)parser foundFunctionCode:(SPGerberFunctionCode*)functionCode;
+- (void)parser:(SPGerberParser*)parser foundGCode:(SPGerberFunctionCode*)functionCode;
 - (void)parser:(SPGerberParser*)parser foundCoordinate:(PFGerberCoordinate*)coordinate;
-- (void)parser:(SPGerberParser*)parser foundDCode:(PFGerberFunctionCode*)functionCode;
+- (void)parser:(SPGerberParser*)parser foundDCode:(SPGerberFunctionCode*)functionCode;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  PFGerberFunctionCode.h
+//  SPGerberFunctionCode.h
 //  Spark
 //
 //  Created by Matt Massicotte on 2/7/10.
@@ -35,7 +35,7 @@ enum _PFGerberFunctionCodeGCodes {
     PFGerberGCodeIncrementalFormat                     = 91
 };
 
-@interface PFGerberFunctionCode : NSObject
+@interface SPGerberFunctionCode : NSObject
 {
     PFGerberFunctionCodeType type;
     NSUInteger               code;

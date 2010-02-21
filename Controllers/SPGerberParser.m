@@ -8,7 +8,7 @@
 
 #import "SPGerberParser.h"
 #import "PFGerberFormat.h"
-#import "PFGerberFunctionCode.h"
+#import "SPGerberFunctionCode.h"
 #import "PFGerberCoordinate.h"
 #import "PFGerberApertureDefinition.h"
 #import "PFGerberApertureMacro.h"
@@ -21,7 +21,7 @@
 
 - (BOOL)parseNextStatement;
 - (BOOL)parseFunctionCode;
-- (BOOL)finishParsingGCode:(PFGerberFunctionCode*)functionCode;
+- (BOOL)finishParsingGCode:(SPGerberFunctionCode*)functionCode;
 - (BOOL)parseParameter;
 - (BOOL)parseCoordinate;
 
@@ -148,10 +148,10 @@
 
 - (BOOL)parseFunctionCode
 {
-    PFGerberFunctionCode* functionCode;
+    SPGerberFunctionCode* functionCode;
     NSInteger             integerValue;
     
-    functionCode = [PFGerberFunctionCode new];
+    functionCode = [SPGerberFunctionCode new];
     
     if ([scanner scanString:@"N" intoString:nil]) // N-Code
     {
@@ -207,7 +207,7 @@
 	return YES;
 }
 
-- (BOOL)finishParsingGCode:(PFGerberFunctionCode*)functionCode
+- (BOOL)finishParsingGCode:(SPGerberFunctionCode*)functionCode
 {
     NSInteger integerValue;
     double    doubleValue;

@@ -107,7 +107,7 @@
     self.layerPolarityPositive = [NSNumber numberWithBool:positivePolarity];
 }
 
-- (void)parser:(SPGerberParser*)parser foundFunctionCode:(PFGerberFunctionCode*)code
+- (void)parser:(SPGerberParser*)parser foundFunctionCode:(SPGerberFunctionCode*)code
 {
     [elements addObject:code];
 }
