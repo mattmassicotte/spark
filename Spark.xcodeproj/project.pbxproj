@@ -195,11 +195,11 @@
 		C921914B112FB8F400401AD4 /* Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Symbol.m; sourceTree = "<group>"; };
 		C921914C112FB8F400401AD4 /* SymbolDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolDefinition.h; sourceTree = "<group>"; };
 		C921914D112FB8F400401AD4 /* SymbolDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolDefinition.m; sourceTree = "<group>"; };
-		C921914E112FB8F400401AD4 /* SparkDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkDocument.h; sourceTree = "<group>"; };
-		C921914F112FB8F400401AD4 /* SparkDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkDocument.m; sourceTree = "<group>"; };
-		C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SparkDocument.xcdatamodel; sourceTree = "<group>"; };
-		C9219151112FB8F400401AD4 /* SPViewerDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPViewerDocument.h; sourceTree = "<group>"; };
-		C9219152112FB8F400401AD4 /* SPViewerDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPViewerDocument.m; sourceTree = "<group>"; };
+		C921914E112FB8F400401AD4 /* SparkDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SparkDocument.h; path = Documents/SparkDocument.h; sourceTree = "<group>"; };
+		C921914F112FB8F400401AD4 /* SparkDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SparkDocument.m; path = Documents/SparkDocument.m; sourceTree = "<group>"; };
+		C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SparkDocument.xcdatamodel; path = Documents/SparkDocument.xcdatamodel; sourceTree = "<group>"; };
+		C9219151112FB8F400401AD4 /* SPViewerDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPViewerDocument.h; path = Documents/SPViewerDocument.h; sourceTree = "<group>"; };
+		C9219152112FB8F400401AD4 /* SPViewerDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewerDocument.m; path = Documents/SPViewerDocument.m; sourceTree = "<group>"; };
 		C9219156112FB8F400401AD4 /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		C9219157112FB8F400401AD4 /* Definition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Definition.m; sourceTree = "<group>"; };
 		C9219158112FB8F400401AD4 /* DesignElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignElement.h; sourceTree = "<group>"; };
@@ -480,16 +480,12 @@
 		C9219132112FB8F400401AD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9C326A61131F2CF0044D3BC /* Documents */,
 				C9219133112FB8F400401AD4 /* Fabrication */,
 				C921913E112FB8F400401AD4 /* Graphical */,
 				C9219147112FB8F400401AD4 /* Layout */,
 				C9219153112FB8F400401AD4 /* Structural */,
 				C921915E112FB8F400401AD4 /* UI */,
-				C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */,
-				C921914E112FB8F400401AD4 /* SparkDocument.h */,
-				C921914F112FB8F400401AD4 /* SparkDocument.m */,
-				C9219151112FB8F400401AD4 /* SPViewerDocument.h */,
-				C9219152112FB8F400401AD4 /* SPViewerDocument.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -758,6 +754,18 @@
 				C9AFF8171130EF33001AB3E9 /* boxes.gtl */,
 			);
 			name = "Spec Gerbers";
+			sourceTree = "<group>";
+		};
+		C9C326A61131F2CF0044D3BC /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */,
+				C921914E112FB8F400401AD4 /* SparkDocument.h */,
+				C921914F112FB8F400401AD4 /* SparkDocument.m */,
+				C9219151112FB8F400401AD4 /* SPViewerDocument.h */,
+				C9219152112FB8F400401AD4 /* SPViewerDocument.m */,
+			);
+			name = Documents;
 			sourceTree = "<group>";
 		};
 		C9F06F561085873F00362CAE /* Stock Documents */ = {
