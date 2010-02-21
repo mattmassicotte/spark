@@ -61,7 +61,7 @@
             return nil;
         }
         
-        endOfDataBlockCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"\n*%"] retain];
+        endOfDataBlockCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"\n*"] retain];
         
         startOfDataBlockCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"%ADFGIJLMOSXY"] retain];
         

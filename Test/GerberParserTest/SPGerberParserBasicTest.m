@@ -63,6 +63,13 @@
     AssertMCode([mockDelegate elementAtIndex:4], 2);
 }
 
+- (void)testLayerNameWithNoTrailingStar
+{
+    [self loadTestDocument:@"/Test Gerbers/layer_name_with_no_star.gtl"];
+    
+    STAssertEqualObjects([[mockDelegate elementAtIndex:0] name], @"NOSTAR", @"Layer name should be NOSTAR");
+}
+
 - (void)testBoxesExample
 {
     [self loadTestDocument:@"/Spec Gerbers/boxes.GTL"];
