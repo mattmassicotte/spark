@@ -26,10 +26,10 @@
     self = [super init];
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(newDesignSurface:)
-                                                     name:DesignSurfaceWasCreatedNotification
-                                                   object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(newDesignSurface:)
+//                                                     name:DesignSurfaceWasCreatedNotification
+//                                                   object:nil];
     }
     
     return self;

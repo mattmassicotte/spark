@@ -68,6 +68,7 @@
     [self loadTestDocument:@"/Test Gerbers/layer_name_with_no_star.gtl"];
     
     STAssertEqualObjects([[mockDelegate elementAtIndex:0] name], @"NOSTAR", @"Layer name should be NOSTAR");
+    STAssertTrue([[mockDelegate elementAtIndex:1] isDark], @"layer polarity should be defined and true");
 }
 
 - (void)testBoxesExample

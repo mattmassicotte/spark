@@ -7,7 +7,7 @@
 //
 
 #import "SparkViewerWindowController.h"
-#import "SparkViewerDocument.h"
+#import "SPViewerDocument.h"
 #import "SparkCAMViewController.h"
 #import "SPProjectNode.h"
 #import "CAMNode.h"

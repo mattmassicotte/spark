@@ -47,6 +47,36 @@
 		C9AFF89411319101001AB3E9 /* SPGerberImagePolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89311319101001AB3E9 /* SPGerberImagePolarity.m */; };
 		C9AFF89911319225001AB3E9 /* SPGerberLayerPolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89811319225001AB3E9 /* SPGerberLayerPolarity.m */; };
 		C9AFF8BD113196D5001AB3E9 /* layer_name_with_no_star.gtl in Resources */ = {isa = PBXBuildFile; fileRef = C9AFF8BC113196D5001AB3E9 /* layer_name_with_no_star.gtl */; };
+		C9AFF8DF11319FA2001AB3E9 /* PFGerberCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */; };
+		C9AFF8E011319FA9001AB3E9 /* SPGerberMCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7AB1130B2BC001AB3E9 /* SPGerberMCode.m */; };
+		C9AFF8E111319FAC001AB3E9 /* SPGerberDCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7A51130B22D001AB3E9 /* SPGerberDCode.m */; };
+		C9AFF8E211319FAF001AB3E9 /* SPGerberGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF77F1130AFE3001AB3E9 /* SPGerberGCode.m */; };
+		C9AFF8E311319FB3001AB3E9 /* SPGerberFunctionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C921913D112FB8F400401AD4 /* SPGerberFunctionCode.m */; };
+		C9AFF8E411319FCC001AB3E9 /* SPGerberParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7EF1130E801001AB3E9 /* SPGerberParameter.m */; };
+		C9AFF8E511319FCC001AB3E9 /* PFGerberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7F21130E83D001AB3E9 /* PFGerberFormat.m */; };
+		C9AFF8E611319FCC001AB3E9 /* SPGerberUnitMode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF8091130EC47001AB3E9 /* SPGerberUnitMode.m */; };
+		C9AFF8E711319FCC001AB3E9 /* SPGerberOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF86E1130FDE4001AB3E9 /* SPGerberOffset.m */; };
+		C9AFF8E811319FCC001AB3E9 /* SPGerberScaleFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF88311310078001AB3E9 /* SPGerberScaleFactor.m */; };
+		C9AFF8E911319FCC001AB3E9 /* SPGerberLayerName.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89011319074001AB3E9 /* SPGerberLayerName.m */; };
+		C9AFF8EA11319FCC001AB3E9 /* SPGerberImagePolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89311319101001AB3E9 /* SPGerberImagePolarity.m */; };
+		C9AFF8EB11319FCC001AB3E9 /* SPGerberLayerPolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89811319225001AB3E9 /* SPGerberLayerPolarity.m */; };
+		C9AFF8EC11319FCC001AB3E9 /* PFGerberApertureDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */; };
+		C9AFF8ED11319FCC001AB3E9 /* PFGerberApertureMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */; };
+		C9AFF8F011319FDB001AB3E9 /* SPGerberStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7B41130B3A2001AB3E9 /* SPGerberStatement.m */; };
+		C9AFF8F111319FEB001AB3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92191CD112FBAD800401AD4 /* main.m */; };
+		C9AFF91E1131C043001AB3E9 /* SPViewerDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219152112FB8F400401AD4 /* SPViewerDocument.m */; };
+		C9AFF9241131C06B001AB3E9 /* SPWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219114112FB8F300401AD4 /* SPWindowController.m */; };
+		C9AFF9251131C074001AB3E9 /* SPImportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219112112FB8F300401AD4 /* SPImportWindowController.m */; };
+		C9AFF9261131C077001AB3E9 /* SparkViewerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921910E112FB8F300401AD4 /* SparkViewerWindowController.m */; };
+		C9AFF92B1131C0E9001AB3E9 /* CAMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219160112FB8F400401AD4 /* CAMNode.m */; };
+		C9AFF92C1131C0E9001AB3E9 /* SPProjectNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219166112FB8F400401AD4 /* SPProjectNode.m */; };
+		C9AFF93B1131C104001AB3E9 /* SPViewerDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9219176112FB8F400401AD4 /* SPViewerDocument.xib */; };
+		C9AFF9461131C1BB001AB3E9 /* GraphicalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219105112FB8F300401AD4 /* GraphicalController.m */; };
+		C9AFF9471131C1BB001AB3E9 /* SparkCAMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219109112FB8F300401AD4 /* SparkCAMViewController.m */; };
+		C9AFF94B1131C1CD001AB3E9 /* SparkElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219184112FB8F400401AD4 /* SparkElementView.m */; };
+		C9AFF94C1131C1CD001AB3E9 /* SparkOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219186112FB8F400401AD4 /* SparkOpenGLView.m */; };
+		C9AFF94D1131C1CD001AB3E9 /* SparkScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219188112FB8F400401AD4 /* SparkScrollView.m */; };
+		C9AFF94E1131C1D3001AB3E9 /* SPFacet.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219180112FB8F400401AD4 /* SPFacet.m */; };
 		C9F8FA3310420E9500CFE30A /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,8 +185,8 @@
 		C921914E112FB8F400401AD4 /* SparkDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkDocument.h; sourceTree = "<group>"; };
 		C921914F112FB8F400401AD4 /* SparkDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkDocument.m; sourceTree = "<group>"; };
 		C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SparkDocument.xcdatamodel; sourceTree = "<group>"; };
-		C9219151112FB8F400401AD4 /* SparkViewerDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkViewerDocument.h; sourceTree = "<group>"; };
-		C9219152112FB8F400401AD4 /* SparkViewerDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkViewerDocument.m; sourceTree = "<group>"; };
+		C9219151112FB8F400401AD4 /* SPViewerDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPViewerDocument.h; sourceTree = "<group>"; };
+		C9219152112FB8F400401AD4 /* SPViewerDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPViewerDocument.m; sourceTree = "<group>"; };
 		C9219154112FB8F400401AD4 /* CAMLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMLayer.h; sourceTree = "<group>"; };
 		C9219155112FB8F400401AD4 /* CAMLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMLayer.m; sourceTree = "<group>"; };
 		C9219156112FB8F400401AD4 /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
@@ -182,7 +212,7 @@
 		C9219171112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C9219173112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/NewComponent.xib; sourceTree = "<group>"; };
 		C9219175112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkDocument.xib; sourceTree = "<group>"; };
-		C9219177112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkViewerDocument.xib; sourceTree = "<group>"; };
+		C9219177112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SPViewerDocument.xib; sourceTree = "<group>"; };
 		C9219179112FB8F400401AD4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SparkViewerMainMenu.xib; sourceTree = "<group>"; };
 		C921917B112FB8F400401AD4 /* Spark-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Spark-Info.plist"; sourceTree = "<group>"; };
 		C921917C112FB8F400401AD4 /* SparkViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SparkViewer-Info.plist"; sourceTree = "<group>"; };
@@ -441,8 +471,8 @@
 				C921914E112FB8F400401AD4 /* SparkDocument.h */,
 				C921914F112FB8F400401AD4 /* SparkDocument.m */,
 				C9219150112FB8F400401AD4 /* SparkDocument.xcdatamodel */,
-				C9219151112FB8F400401AD4 /* SparkViewerDocument.h */,
-				C9219152112FB8F400401AD4 /* SparkViewerDocument.m */,
+				C9219151112FB8F400401AD4 /* SPViewerDocument.h */,
+				C9219152112FB8F400401AD4 /* SPViewerDocument.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -540,7 +570,7 @@
 				C9219170112FB8F400401AD4 /* MainMenu.xib */,
 				C9219172112FB8F400401AD4 /* NewComponent.xib */,
 				C9219174112FB8F400401AD4 /* SparkDocument.xib */,
-				C9219176112FB8F400401AD4 /* SparkViewerDocument.xib */,
+				C9219176112FB8F400401AD4 /* SPViewerDocument.xib */,
 				C9219178112FB8F400401AD4 /* SparkViewerMainMenu.xib */,
 				C921917B112FB8F400401AD4 /* Spark-Info.plist */,
 				C921917C112FB8F400401AD4 /* SparkViewer-Info.plist */,
@@ -849,6 +879,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AFF93B1131C104001AB3E9 /* SPViewerDocument.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +951,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AFF94E1131C1D3001AB3E9 /* SPFacet.m in Sources */,
+				C9AFF94B1131C1CD001AB3E9 /* SparkElementView.m in Sources */,
+				C9AFF94C1131C1CD001AB3E9 /* SparkOpenGLView.m in Sources */,
+				C9AFF94D1131C1CD001AB3E9 /* SparkScrollView.m in Sources */,
+				C9AFF9461131C1BB001AB3E9 /* GraphicalController.m in Sources */,
+				C9AFF9471131C1BB001AB3E9 /* SparkCAMViewController.m in Sources */,
+				C9AFF92B1131C0E9001AB3E9 /* CAMNode.m in Sources */,
+				C9AFF92C1131C0E9001AB3E9 /* SPProjectNode.m in Sources */,
+				C9AFF9261131C077001AB3E9 /* SparkViewerWindowController.m in Sources */,
+				C9AFF9251131C074001AB3E9 /* SPImportWindowController.m in Sources */,
+				C9AFF9241131C06B001AB3E9 /* SPWindowController.m in Sources */,
+				C9AFF91E1131C043001AB3E9 /* SPViewerDocument.m in Sources */,
+				C9AFF8F111319FEB001AB3E9 /* main.m in Sources */,
+				C9AFF8F011319FDB001AB3E9 /* SPGerberStatement.m in Sources */,
+				C9AFF8E411319FCC001AB3E9 /* SPGerberParameter.m in Sources */,
+				C9AFF8E511319FCC001AB3E9 /* PFGerberFormat.m in Sources */,
+				C9AFF8E611319FCC001AB3E9 /* SPGerberUnitMode.m in Sources */,
+				C9AFF8E711319FCC001AB3E9 /* SPGerberOffset.m in Sources */,
+				C9AFF8E811319FCC001AB3E9 /* SPGerberScaleFactor.m in Sources */,
+				C9AFF8E911319FCC001AB3E9 /* SPGerberLayerName.m in Sources */,
+				C9AFF8EA11319FCC001AB3E9 /* SPGerberImagePolarity.m in Sources */,
+				C9AFF8EB11319FCC001AB3E9 /* SPGerberLayerPolarity.m in Sources */,
+				C9AFF8EC11319FCC001AB3E9 /* PFGerberApertureDefinition.m in Sources */,
+				C9AFF8ED11319FCC001AB3E9 /* PFGerberApertureMacro.m in Sources */,
+				C9AFF8E311319FB3001AB3E9 /* SPGerberFunctionCode.m in Sources */,
+				C9AFF8E211319FAF001AB3E9 /* SPGerberGCode.m in Sources */,
+				C9AFF8E111319FAC001AB3E9 /* SPGerberDCode.m in Sources */,
+				C9AFF8E011319FA9001AB3E9 /* SPGerberMCode.m in Sources */,
+				C9AFF8DF11319FA2001AB3E9 /* PFGerberCoordinate.m in Sources */,
 				C9219196112FB9F300401AD4 /* SparkViewerAppDelegate.m in Sources */,
 				C9219197112FB9F300401AD4 /* SPGerberParser.m in Sources */,
 			);
@@ -984,12 +1044,12 @@
 			name = SparkDocument.xib;
 			sourceTree = "<group>";
 		};
-		C9219176112FB8F400401AD4 /* SparkViewerDocument.xib */ = {
+		C9219176112FB8F400401AD4 /* SPViewerDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C9219177112FB8F400401AD4 /* English */,
 			);
-			name = SparkViewerDocument.xib;
+			name = SPViewerDocument.xib;
 			sourceTree = "<group>";
 		};
 		C9219178112FB8F400401AD4 /* SparkViewerMainMenu.xib */ = {
@@ -1178,7 +1238,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "SparkViewer/Resources/SparkViewer-Info.plist";
+				INFOPLIST_FILE = "Resources/SparkViewer-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",

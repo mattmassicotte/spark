@@ -1,5 +1,5 @@
 //
-//  SparkViewerDocument.h
+//  SPViewerDocument.h
 //  Spark
 //
 //  Created by Matt Massicotte on 2/8/10.
@@ -10,7 +10,7 @@
 
 @class SPImportWindowController;
 
-@interface SparkViewerDocument : NSPersistentDocument
+@interface SPViewerDocument : NSPersistentDocument
 {
     SPImportWindowController* importWindowController;
 }

@@ -1149,9 +1149,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{416, 239}, {587, 413}}</string>
+					<string>{{347, 220}, {587, 413}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{416, 239}, {587, 413}}</string>
+					<string>{{347, 220}, {587, 413}}</string>
 					<boolean value="YES"/>
 					<boolean value="YES"/>
 					<string>{256, 256}</string>
@@ -1225,7 +1225,7 @@
 					<string key="superclassName">GraphicalController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">SparkViewer/Controllers/View/SparkCAMViewController.h</string>
+						<string key="minorKey">Controllers/View/SparkCAMViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1246,7 +1246,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">SparkVisualization/Views/SparkElementView.h</string>
+						<string key="minorKey">Visualization/Views/SparkElementView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1280,7 +1280,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">SparkVisualization/Views/SparkOpenGLView.h</string>
+						<string key="minorKey">Visualization/Views/SparkOpenGLView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1288,7 +1288,7 @@
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">SparkVisualization/Views/SparkScrollView.h</string>
+						<string key="minorKey">Visualization/Views/SparkScrollView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1300,7 +1300,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">SparkViewer/Controllers/Window/SparkViewerWindowController.h</string>
+						<string key="minorKey">Controllers/Window/SparkViewerWindowController.h</string>
 					</object>
 				</object>
 			</object>
@@ -1941,7 +1941,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../../../Spark.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../Spark.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

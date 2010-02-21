@@ -22,7 +22,7 @@
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
-			<string>SparkViewerDocument</string>
+			<string>SPViewerDocument</string>
 			<key>NSPersistentStoreTypeKey</key>
 			<string>Binary</string>
 		</dict>
@@ -42,7 +42,7 @@
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
-			<string>SparkViewerDocument</string>
+			<string>SPViewerDocument</string>
 			<key>NSPersistentStoreTypeKey</key>
 			<string>SQLite</string>
 		</dict>
@@ -68,7 +68,7 @@
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
-			<string>SparkViewerDocument</string>
+			<string>SPViewerDocument</string>
 			<key>NSPersistentStoreTypeKey</key>
 			<string>XML</string>
 		</dict>
@@ -80,7 +80,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>NSDocumentClass</key>
-			<string>SparkViewerDocument</string>
+			<string>SPViewerDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>

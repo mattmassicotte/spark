@@ -443,8 +443,4 @@
     self.lastCoordinate = coordinate;
 }
 
-- (void)parser:(SPGerberParser*)parser foundDCode:(PFGerberFunctionCode*)functionCode
-{
-}
-
 @end

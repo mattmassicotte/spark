@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PCBFabrication.h"
+#import "SPFabrication.h"
 
 typedef enum _SparkGerberRenderedInterpolationMode
 {
