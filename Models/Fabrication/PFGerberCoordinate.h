@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SPGerberStatement.h"
 
 typedef enum _PFGerberLightExposureType {
     PFGerberExposureNotSpecified = 0,
@@ -15,7 +16,7 @@ typedef enum _PFGerberLightExposureType {
 	PFGerberExposureFlash        = 3
 } PFGerberLightExposureType;
 
-@interface PFGerberCoordinate : NSObject
+@interface PFGerberCoordinate : SPGerberStatement
 {
     NSNumber*                 x;
     NSNumber*                 y;

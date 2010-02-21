@@ -7,47 +7,42 @@
 //
 
 #import "SPGerberFunctionCode.h"
+#import "SPGerberGCode.h"
+#import "SPGerberDCode.h"
+#import "SPGerberMCode.h"
 
 @implementation SPGerberFunctionCode
 
-@synthesize type;
++ (id)functionCodeWithIdentifier:(NSString*)identifier
+{
+    Class functionCodeClass;
+    
+    if ([identifier isEqualToString:@"N"])
+    {
+    }
+    else if ([identifier isEqualToString:@"G"])
+    {
+        functionCodeClass = [SPGerberGCode class];
+    }
+    else if ([identifier isEqualToString:@"D"])
+    {
+        functionCodeClass = [SPGerberDCode class];
+    }
+    else if ([identifier isEqualToString:@"M"])
+    {
+        functionCodeClass = [SPGerberMCode class];
+    }
+    else
+    {
+        [NSException raise:@"SPUnrecognizedGerberFunctionCode"
+                    format:@"Encountered a function code with an identifier of %@", identifier];
+        
+        return nil;
+    }
+
+    return [[functionCodeClass new] autorelease];
+}
+
 @synthesize code;
-@synthesize xValue;
-@synthesize yValue;
-@synthesize iValue;
-@synthesize jValue;
-@synthesize dCode;
-
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-    }
-    
-    return self;
-}
-
-- (NSString*)description
-{
-    NSMutableString* string;
-    
-    string = [NSMutableString string];
-    
-    [string appendFormat:@"<"];
-    switch (self.type)
-    {
-        case PFGerberFunctionCodeNCode: [string appendFormat:@"N"]; break;
-        case PFGerberFunctionCodeGCode: [string appendFormat:@"G"]; break;
-        case PFGerberFunctionCodeDCode: [string appendFormat:@"D"]; break;
-        case PFGerberFunctionCodeMCode: [string appendFormat:@"M"]; break;
-        default:
-            return [super description];
-    }
-    
-    [string appendFormat:@"-Code %d>", self.code];
-    
-    return string;
-}
 
 @end

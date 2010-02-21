@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SPGerberParameter.h"
 
 typedef enum _PFGerberApertureType {
     PFGerberApertureCircle,
@@ -16,7 +17,7 @@ typedef enum _PFGerberApertureType {
     PFGerberApertureMacroReference
 } PFGerberApertureType;
 
-@interface PFGerberApertureDefinition : NSObject
+@interface PFGerberApertureDefinition : SPGerberParameter
 {
     PFGerberApertureType apertureType;
     NSUInteger           dCode;

@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SPGerberParameter.h"
 
 typedef enum _PFGerberApertureMacroPrimitiveType
 {
@@ -24,7 +25,7 @@ typedef enum _PFGerberApertureMacroPrimitiveType
 
 #define PFGerberApertureMacroMaxModifiers 50
 
-@interface PFGerberApertureMacro : NSObject
+@interface PFGerberApertureMacro : SPGerberParameter
 {
     NSString*                          name;
     PFGerberApertureMacroPrimitiveType type;

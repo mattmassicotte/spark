@@ -32,7 +32,7 @@
     
     string = [NSMutableString string];
     [string appendFormat:@"<X:%@ Y:%@ I:%@ J:%@", self.x, self.y, self.i, self.j];
-    [string appendFormat:@"%d>", self.exposureType];
+    [string appendFormat:@" %d>", self.exposureType];
     
     return string;
 }

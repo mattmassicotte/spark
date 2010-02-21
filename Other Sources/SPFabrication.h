@@ -9,8 +9,19 @@
 
 #import "SPGerberParser.h"
 
+#import "PFGerberFormat.h"
+#import "SPGerberUnitMode.h"
+#import "SPGerberOffset.h"
+#import "SPGerberScaleFactor.h"
+#import "SPGerberLayerName.h"
+#import "SPGerberImagePolarity.h"
+#import "SPGerberLayerPolarity.h"
+
 #import "PFGerberApertureDefinition.h"
 #import "PFGerberApertureMacro.h"
 #import "PFGerberCoordinate.h"
-#import "PFGerberFormat.h"
+
 #import "SPGerberFunctionCode.h"
+#import "SPGerberGCode.h"
+#import "SPGerberMCode.h"
+#import "SPGerberDCode.h"

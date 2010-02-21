@@ -8,6 +8,12 @@
 
 #import "SPGerberParser.h"
 #import "PFGerberFormat.h"
+#import "SPGerberUnitMode.h"
+#import "SPGerberOffset.h"
+#import "SPGerberScaleFactor.h"
+#import "SPGerberLayerName.h"
+#import "SPGerberImagePolarity.h"
+#import "SPGerberLayerPolarity.h"
 #import "SPGerberFunctionCode.h"
 #import "PFGerberCoordinate.h"
 #import "PFGerberApertureDefinition.h"
@@ -21,19 +27,18 @@
 
 - (BOOL)parseNextStatement;
 - (BOOL)parseFunctionCode;
-- (BOOL)finishParsingGCode:(SPGerberFunctionCode*)functionCode;
 - (BOOL)parseParameter;
 - (BOOL)parseCoordinate;
 
-- (BOOL)parseFormatStatement;
-- (BOOL)parseModeOfUnits;
-- (BOOL)parseOffset;
-- (BOOL)parseScaleFactor;
-- (BOOL)parseApertureDefinition;
-- (BOOL)parserApertureMacro;
-- (BOOL)parseLayerName;
-- (BOOL)parseImagePolarity;
-- (BOOL)parseLayerPolarity;
+- (SPGerberParameter*)parseFormatStatement;
+- (SPGerberParameter*)parseModeOfUnits;
+- (SPGerberParameter*)parseOffset;
+- (SPGerberParameter*)parseScaleFactor;
+- (SPGerberParameter*)parseApertureDefinition;
+- (SPGerberParameter*)parserApertureMacro;
+- (SPGerberParameter*)parseLayerName;
+- (SPGerberParameter*)parseImagePolarity;
+- (SPGerberParameter*)parseLayerPolarity;
 
 @end
 
@@ -56,9 +61,11 @@
             return nil;
         }
         
-        endOfDataBlockCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"\n*"] retain];
+        endOfDataBlockCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"\n*%"] retain];
         
         startOfDataBlockCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"%ADFGIJLMOSXY"] retain];
+        
+        numericCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] retain];
 	}
     
 	return self;
@@ -70,6 +77,7 @@
     [scanner release];
     [endOfDataBlockCharacterSet release];
     [startOfDataBlockCharacterSet release];
+    [numericCharacterSet release];
     
     [super dealloc];
 }
@@ -79,11 +87,15 @@
 
 - (BOOL)parse
 {
+    NSCharacterSet* whitespaceAndNewlineCharacterSet;
+    
     self.scanner = [NSScanner scannerWithString:fileContents];
     [self.scanner setCharactersToBeSkipped:nil];
     [self.scanner setCaseSensitive:NO];
     
-    [self.scanner scanCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
+    whitespaceAndNewlineCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    [self.scanner scanCharactersFromSet:whitespaceAndNewlineCharacterSet intoString:nil];
     
     parsingParameters = NO;
     
@@ -100,7 +112,7 @@
             return NO;
         }
         
-        [self.scanner scanCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
+        [self.scanner scanCharactersFromSet:whitespaceAndNewlineCharacterSet intoString:nil];
 	}
 	
     if ([delegate respondsToSelector:@selector(parserDidEndDocument:)])
@@ -148,197 +160,128 @@
 
 - (BOOL)parseFunctionCode
 {
+    NSString*             identifier;
     SPGerberFunctionCode* functionCode;
     NSInteger             integerValue;
     
-    functionCode = [SPGerberFunctionCode new];
+    [scanner scanUpToCharactersFromSet:numericCharacterSet intoString:&identifier];
     
-    if ([scanner scanString:@"N" intoString:nil]) // N-Code
-    {
-        functionCode.type = PFGerberFunctionCodeNCode;
-    }
-    else if ([scanner scanString:@"G" intoString:nil]) // G-Code
-    {
-        functionCode.type = PFGerberFunctionCodeGCode;
-    }
-    else if ([scanner scanString:@"D" intoString:nil]) // D-Code
-    {
-        functionCode.type = PFGerberFunctionCodeDCode;
-    }
-    else if ([scanner scanString:@"M" intoString:nil]) // M-Code
-    {
-        functionCode.type = PFGerberFunctionCodeMCode;
-    }
-    else
-    {
-        NSLog(@"found an unsupported function code");
-        return NO;
-    }
+    functionCode = [SPGerberFunctionCode functionCodeWithIdentifier:identifier];
     
     [scanner scanInteger:&integerValue];
     functionCode.code = integerValue;
     
-    // scan remainder
-    if (functionCode.type == PFGerberFunctionCodeGCode)
+    // we need to special-case comments
+    if ([identifier isEqualToString:@"G"] && (integerValue == 4))
     {
-        [self finishParsingGCode:functionCode];
+        // ignore data block
+        [scanner scanUpToCharactersFromSet:endOfDataBlockCharacterSet intoString:nil];
     }
-
-    [scanner scanCharactersFromSet:endOfDataBlockCharacterSet intoString:nil];
-	
+    
     if ([delegate respondsToSelector:@selector(parser:foundFunctionCode:)])
     {
         [delegate parser:self foundFunctionCode:functionCode];
     }
-    
-    switch ([functionCode type]) {
-        case PFGerberFunctionCodeGCode:
-            if ([delegate respondsToSelector:@selector(parser:foundGCode:)])
-                [delegate parser:self foundGCode:functionCode];
-            break;
-        case PFGerberFunctionCodeDCode:
-            if ([delegate respondsToSelector:@selector(parser:foundDCode:)])
-                [delegate parser:self foundDCode:functionCode];
-            break;
+    else if ([delegate respondsToSelector:@selector(parser:foundStatement:)])
+    {
+        [delegate parser:self foundStatement:functionCode];
     }
     
-    [functionCode release];
+    // scan the *, which may or may not actually be there
+    [self.scanner scanString:@"*" intoString:nil];
     
 	return YES;
 }
 
-- (BOOL)finishParsingGCode:(SPGerberFunctionCode*)functionCode
-{
-    NSInteger integerValue;
-    double    doubleValue;
-    
-    if (functionCode.code == 4)
-    {
-        // ignore data block
-        [scanner scanUpToCharactersFromSet:endOfDataBlockCharacterSet intoString:nil];
-        return YES;
-    }
-    if ([scanner scanString:@"X" intoString:nil])
-    {
-        [scanner scanDouble:&doubleValue];
-        functionCode.xValue = doubleValue;
-    }
-    
-    if ([scanner scanString:@"Y" intoString:nil])
-    {
-        [scanner scanDouble:&doubleValue];
-        functionCode.yValue = doubleValue;
-    }
-    
-    if ([scanner scanString:@"I" intoString:nil])
-    {
-        [scanner scanDouble:&doubleValue];
-        functionCode.iValue = doubleValue;
-    }
-    
-    if ([scanner scanString:@"J" intoString:nil])
-    {
-        [scanner scanDouble:&doubleValue];
-        functionCode.jValue = doubleValue;
-    }
-    
-    if ([scanner scanString:@"D" intoString:nil])
-    {
-        [scanner scanInteger:&integerValue];
-        functionCode.dCode = integerValue;
-    }
-    
-    return YES;
-}
-
 - (BOOL)parseParameter
 {
-	NSString* code;
-    BOOL      result;
+	NSString*          code;
+    SPGerberParameter* parameter;
     
     code = [[scanner string] substringWithRange:NSMakeRange([scanner scanLocation], 2)];
     
-    result = NO;
+    parameter = nil;
     
     if ([code isEqualToString:@"AS"]) // axis select
     {
-//        parameter.type = PFGerberParameterAxisSelect;
     }
     else if ([code isEqualToString:@"FS"]) // format statement
     {
-        result = [self parseFormatStatement];
+        parameter = [self parseFormatStatement];
     }
     else if ([code isEqualToString:@"MI"]) // mirror image
     {
- //       parameter.type = PFGerberParameterMirrorImage;
     }
     else if ([code isEqualToString:@"MO"]) // mode of units
     {
-        result = [self parseModeOfUnits];
+        parameter = [self parseModeOfUnits];
     }
     else if ([code isEqualToString:@"OF"]) // offset
     {
-        result = [self parseOffset];
+        parameter = [self parseOffset];
     }
     else if ([code isEqualToString:@"SF"]) // scale factor
     {
-        result = [self parseScaleFactor];
+        parameter = [self parseScaleFactor];
     }
     else if ([code isEqualToString:@"IJ"]) // image justify
     {
-//        parameter.type = PFGerberParameterImageJustify;
     }
     else if ([code isEqualToString:@"IN"]) // image name
     {
-//        parameter.type = PFGerberParameterImageName;
     }
     else if ([code isEqualToString:@"IO"]) // image offset
     {
-//        parameter.type = PFGerberParameterImageOffset;
     }
     else if ([code isEqualToString:@"IP"]) // image polarity
     {
-        result = [self parseImagePolarity];
+        parameter = [self parseImagePolarity];
     }
     else if ([code isEqualToString:@"IR"]) // image rotation
     {
-//        parameter.type = PFGerberParameterImageRotation;
     }
     else if ([code isEqualToString:@"PF"]) // plotter film
     {
-//        parameter.type = PFGerberParameterPlotterFilm;
     }
     else if ([code isEqualToString:@"AD"]) // aperture description
     {
-        result = [self parseApertureDefinition];
+        parameter = [self parseApertureDefinition];
     }
     else if ([code isEqualToString:@"AM"]) // aperture macro
     {
-        result = [self parserApertureMacro];
-//        parameter.type = PFGerberParameterApertureMacro;
+        parameter = [self parserApertureMacro];
     }
     else if ([code isEqualToString:@"KO"]) // knockout
     {
-//        parameter.type = PFGerberParameterKnockout;
     }
     else if ([code isEqualToString:@"LN"]) // layer name
     {
-        result = [self parseLayerName];
+        parameter = [self parseLayerName];
     }
     else if ([code isEqualToString:@"LP"]) // layer polarity
     {
-        result = [self parseLayerPolarity];
+        parameter = [self parseLayerPolarity];
     }
     else if ([code isEqualToString:@"SR"]) // step and repeat
     {
-//        parameter.type = PFGerberParameterStepAndRepeat;
     }
     else if ([code isEqualToString:@"IF"]) // include file
     {
-//        parameter.type = PFGerberParameterIncludeFile;
     }
     
-	return result;
+    if (parameter == nil)
+        return NO;
+    
+    if ([delegate respondsToSelector:@selector(parser:foundParameter:)])
+    {
+        [delegate parser:self foundParameter:parameter];
+    }
+    else if ([delegate respondsToSelector:@selector(parser:foundStatement:)])
+    {
+        [delegate parser:self foundStatement:parameter];
+    }
+    
+	return YES;
 }
 
 - (BOOL)parseCoordinate
@@ -383,6 +326,10 @@
     {
         [delegate parser:self foundCoordinate:coordinate];
     }
+    else if ([delegate respondsToSelector:@selector(parser:foundStatement:)])
+    {
+        [delegate parser:self foundStatement:coordinate];
+    }
     
     [coordinate release];
     
@@ -393,7 +340,7 @@
 
 #pragma mark Parameters
 
-- (BOOL)parseFormatStatement
+- (SPGerberParameter*)parseFormatStatement
 {
     PFGerberFormat* format;
     NSInteger       integerValue;
@@ -455,29 +402,24 @@
         }
     }
     
-    if ([delegate respondsToSelector:@selector(parser:foundFormat:)])
-    {
-        [delegate parser:self foundFormat:format];
-    }
-    
-    [format release];
-    
-    return YES;
+    return [format autorelease];
 }
 
-- (BOOL)parseModeOfUnits
+- (SPGerberParameter*)parseModeOfUnits
 {
-    BOOL usingInches;
+    SPGerberUnitMode* mode;
     
     [scanner scanString:@"MO" intoString:nil];
     
+    mode = [SPGerberUnitMode new];
+    
     if ([scanner scanString:@"MM" intoString:nil])
     {
-        usingInches = NO;
+        mode.usingInches = NO;
     }
     else if ([scanner scanString:@"IN" intoString:nil])
     {
-        usingInches = YES;
+        mode.usingInches = YES;
     }
     else
     {
@@ -485,63 +427,54 @@
         return NO;
     }
     
-    if ([delegate respondsToSelector:@selector(parser:foundModeOfUnits:)])
-    {
-        [delegate parser:self foundModeOfUnits:usingInches];
-    }
-    
-    [scanner scanString:@"*" intoString:nil];
-    
-    return YES;
+    return [mode autorelease];
 }
 
-- (BOOL)parseOffset
+- (SPGerberParameter*)parseOffset
 {
-    NSInteger aOffset;
-    NSInteger bOffset;
+    SPGerberOffset* offset;
+    double          value;
+    
+    offset = [SPGerberOffset new];
     
     [scanner scanString:@"OF" intoString:nil];
     
     [scanner scanString:@"A" intoString:nil];
-    [scanner scanInteger:&aOffset];
+    [scanner scanDouble:&value];
+    offset.aOffset = value;
     
     [scanner scanString:@"B" intoString:nil];
-    [scanner scanInteger:&bOffset];
-    
-    if ([delegate respondsToSelector:@selector(parser:foundOffsetForA:andB:)])
-    {
-        [delegate parser:self foundOffsetForA:aOffset andB:bOffset];
-    }
+    [scanner scanDouble:&value];
+    offset.bOffset = value;
     
     [scanner scanString:@"*" intoString:nil];
     
-    return YES;
+    return [offset autorelease];
 }
 
-- (BOOL)parseScaleFactor
+- (SPGerberParameter*)parseScaleFactor
 {
-    double aScale;
-    double bScale;
+    SPGerberScaleFactor* scaleFactor;
+    double               value;
+    
+    scaleFactor = [SPGerberScaleFactor new];
     
     [scanner scanString:@"SF" intoString:nil];
     
     [scanner scanString:@"A" intoString:nil];
-    [scanner scanDouble:&aScale];
+    [scanner scanDouble:&value];
+    scaleFactor.aScale = value;
     
     [scanner scanString:@"B" intoString:nil];
-    [scanner scanDouble:&bScale];
-    
-    if ([delegate respondsToSelector:@selector(parser:foundScaleFactorForA:andB:)])
-    {
-        [delegate parser:self foundScaleFactorForA:aScale andB:bScale];
-    }
-    
+    [scanner scanDouble:&value];
+    scaleFactor.bScale = value;
+
     [scanner scanString:@"*" intoString:nil];
-    
-    return YES;
+
+    return [scaleFactor autorelease];
 }
 
-- (BOOL)parseApertureDefinition
+- (SPGerberParameter*)parseApertureDefinition
 {
     PFGerberApertureDefinition* definition;
     NSString*                   apertureType;
@@ -597,15 +530,10 @@
     
     [scanner scanString:@"*" intoString:nil];
     
-    if ([delegate respondsToSelector:@selector(parser:foundApertureDefinition:)])
-    {
-        [delegate parser:self foundApertureDefinition:definition];
-    }
-    
-    return YES;
+    return [definition autorelease];
 }
 
-- (BOOL)parserApertureMacro
+- (SPGerberParameter*)parserApertureMacro
 {
     PFGerberApertureMacro* macro;
     NSString*              string;
@@ -644,90 +572,77 @@
 
     // reset the scanning behavior
     [self.scanner setCharactersToBeSkipped:nil];
-    
-    [macro release];
-    
-    return YES;
+
+    return [macro autorelease];
 }
 
-- (BOOL)parseLayerName
+- (SPGerberParameter*)parseLayerName
 {
+    SPGerberLayerName* layerName;
     NSString* name;
+    
+    layerName = [SPGerberLayerName new];
     
     [scanner scanString:@"LN" intoString:nil];
     
-    [scanner scanUpToString:@"*" intoString:&name];
-    
-    if ([delegate respondsToSelector:@selector(parser:foundLayer:)])
-    {
-        [delegate parser:self foundLayer:name];
-    }
+    [scanner scanUpToCharactersFromSet:endOfDataBlockCharacterSet intoString:&name];
+    layerName.name = name;
     
     [scanner scanString:@"*" intoString:nil];
     
-    return YES;
+    return [layerName autorelease];
 }
 
-- (BOOL)parseImagePolarity
+- (SPGerberParameter*)parseImagePolarity
 {
-    BOOL polarityPositive;
+    SPGerberImagePolarity* polarity;
+    
+    polarity = [SPGerberImagePolarity new];
     
     [scanner scanString:@"IP" intoString:nil];
     
-    polarityPositive = NO;
-    
     if ([scanner scanString:@"POS" intoString:nil])
     {
-        polarityPositive = YES;
+        polarity.isPositive = YES;
     }
     else if ([scanner scanString:@"NEG" intoString:nil])
     {
-        polarityPositive = NO;
+        polarity.isPositive = NO;
     }
     else {
         NSLog(@"Malformed image polarity parameter");
-        return NO;
+        return nil;
     }
 
-    if ([delegate respondsToSelector:@selector(parser:foundImagePolarity:)])
-    {
-        [delegate parser:self foundImagePolarity:polarityPositive];
-    }
-    
     [scanner scanString:@"*" intoString:nil];
     
-    return YES;
+    return [polarity autorelease];
 }
 
-- (BOOL)parseLayerPolarity
+- (SPGerberParameter*)parseLayerPolarity
 {
-    BOOL polarityPositive;
+    SPGerberLayerPolarity* polarity;
+    
+    polarity = [SPGerberLayerPolarity new];
     
     [scanner scanString:@"LP" intoString:nil];
     
-    polarityPositive = NO;
-    
     if ([scanner scanString:@"D" intoString:nil])
     {
-        polarityPositive = YES;
+        polarity.isDark = YES;
     }
     else if ([scanner scanString:@"C" intoString:nil])
     {
-        polarityPositive = NO;
+        polarity.isDark = NO;
     }
     else {
         NSLog(@"Malformed layer polarity parameter");
         return NO;
     }
     
-    if ([delegate respondsToSelector:@selector(parser:foundLayerPolarity:)])
-    {
-        [delegate parser:self foundLayerPolarity:polarityPositive];
-    }
-    
     [scanner scanString:@"*" intoString:nil];
     
-    return YES;
+    return [polarity autorelease];
 }
 
 @end

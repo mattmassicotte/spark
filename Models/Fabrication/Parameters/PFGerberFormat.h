@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SPGerberParameter.h"
 
-@interface PFGerberFormat : NSObject
+@interface PFGerberFormat : SPGerberParameter
 {
     BOOL omitLeadingZeros;
     BOOL omitTrailingZeros;

@@ -10,7 +10,7 @@
 
 @protocol SPGerberParserDelegate;
 
-@class PFGerberFormat, PFGerberApertureDefinition, SPGerberFunctionCode, PFGerberCoordinate;
+@class SPGerberStatement, SPGerberFunctionCode, PFGerberCoordinate, SPGerberParameter;
 
 @interface SPGerberParser : NSObject
 {
@@ -22,6 +22,7 @@
     
     NSCharacterSet* endOfDataBlockCharacterSet;
     NSCharacterSet* startOfDataBlockCharacterSet;
+    NSCharacterSet* numericCharacterSet;
     BOOL            parsingParameters;
 }
 
@@ -39,18 +40,9 @@
 - (void)parserDidStartDocument:(SPGerberParser*)parser;
 - (void)parserDidEndDocument:(SPGerberParser*)parser;
 
-- (void)parser:(SPGerberParser*)parser foundFormat:(PFGerberFormat*)format;
-- (void)parser:(SPGerberParser*)parser foundModeOfUnits:(BOOL)usingInches;
-- (void)parser:(SPGerberParser*)parser foundOffsetForA:(double)aOffset andB:(double)bOffset;
-- (void)parser:(SPGerberParser*)parser foundScaleFactorForA:(double)aScale andB:(double)bScale;
-- (void)parser:(SPGerberParser*)parser foundApertureDefinition:(PFGerberApertureDefinition*)definition;
-- (void)parser:(SPGerberParser*)parser foundLayer:(NSString*)name;
-- (void)parser:(SPGerberParser*)parser foundLayerPolarity:(BOOL)positivePolarity;
-- (void)parser:(SPGerberParser*)parser foundImagePolarity:(BOOL)positivePolarity;
-
+- (void)parser:(SPGerberParser*)parser foundStatement:(SPGerberStatement*)statement;
+- (void)parser:(SPGerberParser*)parser foundParameter:(SPGerberParameter*)parameter;
 - (void)parser:(SPGerberParser*)parser foundFunctionCode:(SPGerberFunctionCode*)functionCode;
-- (void)parser:(SPGerberParser*)parser foundGCode:(SPGerberFunctionCode*)functionCode;
 - (void)parser:(SPGerberParser*)parser foundCoordinate:(PFGerberCoordinate*)coordinate;
-- (void)parser:(SPGerberParser*)parser foundDCode:(SPGerberFunctionCode*)functionCode;
 
 @end
