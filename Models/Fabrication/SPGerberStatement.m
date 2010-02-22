@@ -7,8 +7,12 @@
 //
 
 #import "SPGerberStatement.h"
-
+#import "SPGerberRenderingContext.h"
 
 @implementation SPGerberStatement
+
+- (void)applyToContext:(SPGerberRenderingContext*)context
+{
+}
 
 @end

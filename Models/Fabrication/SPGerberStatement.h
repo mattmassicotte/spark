@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SPGerberRenderingContext;
+
 @interface SPGerberStatement : NSObject
 {
 }
+
+- (void)applyToContext:(SPGerberRenderingContext*)context;
 
 @end

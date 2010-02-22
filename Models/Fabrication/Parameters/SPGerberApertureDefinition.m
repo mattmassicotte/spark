@@ -6,9 +6,10 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "PFGerberApertureDefinition.h"
+#import "SPGerberApertureDefinition.h"
+#import "SPGerberRenderingContext.h"
 
-@implementation PFGerberApertureDefinition
+@implementation SPGerberApertureDefinition
 
 @synthesize apertureType;
 @synthesize dCode;
@@ -41,11 +42,11 @@
     
     switch (self.apertureType)
     {
-        case PFGerberApertureCircle:         [string appendString:@"Circle"];              break;
-        case PFGerberApertureRectangle:      [string appendString:@"Rectangle"];           break;
-        case PFGerberApertureObround:        [string appendString:@"Obround"];             break;
-        case PFGerberAperturePolygon:        [string appendString:@"Polygon"];             break;
-        case PFGerberApertureMacroReference: [string appendFormat:@"Macro %@", macroName]; break;
+        case SPGerberApertureCircle:         [string appendString:@"Circle"];              break;
+        case SPGerberApertureRectangle:      [string appendString:@"Rectangle"];           break;
+        case SPGerberApertureObround:        [string appendString:@"Obround"];             break;
+        case SPGerberAperturePolygon:        [string appendString:@"Polygon"];             break;
+        case SPGerberApertureMacroReference: [string appendFormat:@"Macro %@", macroName]; break;
         default:
             return [super description];
     }
@@ -58,6 +59,11 @@
 - (void)addModifier:(NSNumber*)modifier
 {
     [modifiers addObject:modifier];
+}
+
+- (void)applyToContext:(SPGerberRenderingContext *)context
+{
+    [context addApertureDefinition:self];
 }
 
 @end

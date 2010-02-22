@@ -8,8 +8,12 @@
 
 #import "SPViewerDocument.h"
 #import "SPViewerWindowController.h"
-#import "SparkGerberRenderer.h"
 #import "SPImportWindowController.h"
+#import "SPGerberRenderingContext.h"
+#import "PCBLayer.h"
+#import "PCBSublayer.h"
+
+#define GERBER_UTI @"com.spark.gerber"
 
 @interface SPViewerDocument ()
 
@@ -34,25 +38,20 @@
 	[self addWindowController:[[SPViewerWindowController new] autorelease]];
 }
 
-- (void)windowControllerDidLoadNib:(NSWindowController *)windowController 
-{
-    [super windowControllerDidLoadNib:windowController];
-    // user interface preparation code
-}
-
 + (NSArray *)readableTypes
 {
     NSMutableArray* types;
     
     types = [NSMutableArray arrayWithArray:[super readableTypes]];
-    [types addObject:@"com.spark.gerber"];
+    [types addObject:GERBER_UTI];
+    [types addObject:@"public.plain-text"];
     
     return types;
 }
 
 - (BOOL)readFromURL:(NSURL *)absoluteURL ofType:(NSString *)typeName error:(NSError **)error
 {
-    if (UTTypeConformsTo((CFStringRef)typeName, CFSTR("com.spark.gerber")))
+    if (UTTypeConformsTo((CFStringRef)typeName, (CFStringRef)GERBER_UTI))
     {
         return [self importGerberFile:absoluteURL error:error];
     }
@@ -60,48 +59,61 @@
     return [super readFromURL:absoluteURL ofType:typeName error:error];
 }
 
+- (IBAction)import:(id)sender
+{
+    NSOpenPanel* panel;
+
+    panel = [NSOpenPanel openPanel];
+    
+    [panel setAllowsMultipleSelection:YES];
+    [panel setCanChooseFiles:YES];
+    [panel setCanChooseDirectories:NO];
+    
+    [panel setAllowedFileTypes:[[self class] readableTypes]];
+    
+    [panel beginSheetModalForWindow:[self windowForSheet] completionHandler:^(NSInteger result) {
+        if (result == NSFileHandlingPanelOKButton)
+        {
+            [[panel URLs] enumerateObjectsUsingBlock:^(id url, NSUInteger idx, BOOL *stop) {
+                [self importGerberFile:url error:nil];
+            }];
+        }
+    }];
+}
+
 - (BOOL)importGerberFile:(NSURL*)url error:(NSError **)error
 {
-//    NSString*            uti;
-//    CAMLayer*            layer;
-//    SparkGerberRenderer* renderer;
-//    
-//    renderer = [[SparkGerberRenderer new] autorelease];
-//    
-//    layer = [NSEntityDescription insertNewObjectForEntityForName:@"CAMLayer" inManagedObjectContext:[self managedObjectContext]];
-//    [layer setValue:[url lastPathComponent] forKey:@"name"];
-//    
-//    [url getResourceValue:&uti forKey:NSURLTypeIdentifierKey error:nil];
-//    
-//    if (UTTypeEqual((CFStringRef)uti, CFSTR("com.spark.gerber")) || UTTypeEqual((CFStringRef)uti, CFSTR("public.plain-text")))
+    SPGerberRenderingContext* context;
+    SPGerberParser*           parser;
+    PCBLayer*                 layer;
+    PCBSublayer*              sublayer;
+    NSString*                 uti;
+    
+    [url getResourceValue:&uti forKey:NSURLTypeIdentifierKey error:nil];
+        
+//    if (UTTypeEqual((CFStringRef)uti, (CFStringRef)GERBER_UTI) || UTTypeEqual((CFStringRef)uti, CFSTR("public.plain-text")))
 //    {
 //        // we don't know what layer we are dealing with, so we need to ask
 //        if (!importWindowController)
-//            importWindowController = [[SPImportWindowController alloc] initWithWindowNibName:@"ImportWindow"];
-//
-//        NSLog(@"%@ %@", [importWindowController window], [self windowForSheet]);
+//            importWindowController = [SPImportWindowController new];
 //        
-//        [NSApp beginSheet:[importWindowController window]
-//           modalForWindow:[self windowForSheet]
-//            modalDelegate:self
-//           didEndSelector:@selector(didEndImportSheet:returnCode:contextInfo:)
-//              contextInfo:nil];
+//        [importWindowController beginSheetModalForWindow:[self windowForSheet] completionHandler:^(NSInteger result) {
+//            NSLog(@"Complete: %d", result);
+//        }];
 //    }
-//    
-//    if (![renderer renderGerberFile:url onCAMLayer:layer])
-//    {
-//        return NO;
-//    }
-//    
-//    return YES;
     
-    return NO;
+    layer    = [NSEntityDescription insertNewObjectForEntityForName:@"PCBLayer" inManagedObjectContext:[self managedObjectContext]];
+    sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
+    
+    [layer addSublayersObject:sublayer];
+    
+    context = [[SPGerberRenderingContext alloc] initWithPCBSublayer:sublayer];
+    parser  = [[SPGerberParser alloc] initWithContentsOfURL:url];
+    parser.delegate = context;
+    
+    [parser parse];
+    
+    return YES;
 }
 
- - (void)didEndImportSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
-{
-    [NSApp endSheet:sheet];
-    
-    [sheet orderOut:self];
-}
 @end

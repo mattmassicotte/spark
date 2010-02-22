@@ -9,6 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import "SPGerberFunctionCode.h"
 
+typedef enum _SPGerberExposureType {
+    SPGerberExposureNotSpecified = 0,
+    SPGerberExposureOn           = 1,
+	SPGerberExposureOff          = 2,
+	SPGerberExposureFlash        = 3
+} SPGerberExposureType;
+
 @interface SPGerberDCode : SPGerberFunctionCode
 {
 }

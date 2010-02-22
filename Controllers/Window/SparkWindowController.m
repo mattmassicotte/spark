@@ -91,7 +91,7 @@
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
 {
-	return ![item isHeader];
+	return ![item SPGerberExposureOff];
 }
 
 @end

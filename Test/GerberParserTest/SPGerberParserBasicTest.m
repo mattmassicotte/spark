@@ -32,7 +32,7 @@
 {
     [self loadTestDocument:@"/Test Gerbers/single_arc_coordinate.GTL"];
     
-    AssertArcCoordinate([mockDelegate elementAtIndex:2], 10.0, 11.0, 12.0, 13.0, PFGerberExposureOff);
+    AssertArcCoordinate([mockDelegate elementAtIndex:2], 10.0, 11.0, 12.0, 13.0, SPGerberExposureOff);
 }
 
 - (void)testImagePolarity
@@ -59,7 +59,7 @@
     [self loadTestDocument:@"/Test Gerbers/g03_with_coordinate.gtl"];
     
     AssertGCode([mockDelegate elementAtIndex:2], 3);
-    AssertArcCoordinate([mockDelegate elementAtIndex:3], 3750.0, 1000.0, 250.0, 0.0, PFGerberExposureOn);
+    AssertArcCoordinate([mockDelegate elementAtIndex:3], 3750.0, 1000.0, 250.0, 0.0, SPGerberExposureOn);
     AssertMCode([mockDelegate elementAtIndex:4], 2);
 }
 
@@ -92,16 +92,16 @@
     AssertGCode([mockDelegate elementAtIndex:7], 54);
     AssertDCode([mockDelegate elementAtIndex:8], 10);
 
-    AssertLinearCoordinate([mockDelegate elementAtIndex:9],      0.0,     0.0, PFGerberExposureOff);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:10],  5000.0,     0.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:11],  5000.0,  5000.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:12],     0.0,  5000.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:13],     0.0,     0.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:14],  6000.0,     0.0, PFGerberExposureNotSpecified);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:15], 11000.0,     0.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:16], 11000.0,  5000.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:17],  6000.0,  5000.0, PFGerberExposureOn);
-    AssertLinearCoordinate([mockDelegate elementAtIndex:18],  6000.0,     0.0, PFGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:9],      0.0,     0.0, SPGerberExposureOff);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:10],  5000.0,     0.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:11],  5000.0,  5000.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:12],     0.0,  5000.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:13],     0.0,     0.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:14],  6000.0,     0.0, SPGerberExposureNotSpecified);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:15], 11000.0,     0.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:16], 11000.0,  5000.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:17],  6000.0,  5000.0, SPGerberExposureOn);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:18],  6000.0,     0.0, SPGerberExposureOn);
     
     AssertDCode([mockDelegate elementAtIndex:19], 2);
     

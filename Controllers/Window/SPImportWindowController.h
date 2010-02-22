@@ -9,8 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface SPImportWindowController : NSWindowController {
-
+@interface SPImportWindowController : NSWindowController
+{
+    void (^completionHandler)(NSInteger);
 }
+
+- (IBAction)performImport:(id)sender;
+- (IBAction)cancelImport:(id)sender;
+
+- (void)beginSheetModalForWindow:(NSWindow *)mainWindow completionHandler:(void (^)(NSInteger result))handler;
 
 @end

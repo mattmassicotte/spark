@@ -15,8 +15,8 @@
 #import "SPGerberImagePolarity.h"
 #import "SPGerberLayerPolarity.h"
 #import "SPGerberFunctionCode.h"
-#import "PFGerberCoordinate.h"
-#import "PFGerberApertureDefinition.h"
+#import "SPGerberCoordinate.h"
+#import "SPGerberApertureDefinition.h"
 #import "PFGerberApertureMacro.h"
 
 #import "NSScannerExtensions.h"
@@ -286,11 +286,11 @@
 
 - (BOOL)parseCoordinate
 {
-    PFGerberCoordinate* coordinate;
+    SPGerberCoordinate* coordinate;
     double              doubleValue;
     NSInteger           integerValue;
 	
-    coordinate = [PFGerberCoordinate new];
+    coordinate = [SPGerberCoordinate new];
     
     if ([scanner scanString:@"X" intoString:nil])
     {
@@ -476,12 +476,12 @@
 
 - (SPGerberParameter*)parseApertureDefinition
 {
-    PFGerberApertureDefinition* definition;
+    SPGerberApertureDefinition* definition;
     NSString*                   apertureType;
     NSInteger                   integerValue;
     double                      doubleValue;
     
-    definition = [PFGerberApertureDefinition new];
+    definition = [SPGerberApertureDefinition new];
     
     [scanner scanString:@"ADD" intoString:nil];
     [scanner scanInteger:&integerValue];
@@ -492,26 +492,26 @@
     if ([apertureType isEqualToString:@"C"])
     {
         [scanner scanString:@"C" intoString:nil];
-        definition.apertureType = PFGerberApertureCircle;
+        definition.apertureType = SPGerberApertureCircle;
     }
     else if ([apertureType isEqualToString:@"R"])
     {
         [scanner scanString:@"R" intoString:nil];
-        definition.apertureType = PFGerberApertureRectangle;
+        definition.apertureType = SPGerberApertureRectangle;
     }
     else if ([apertureType isEqualToString:@"O"])
     {
         [scanner scanString:@"O" intoString:nil];
-        definition.apertureType = PFGerberApertureObround;
+        definition.apertureType = SPGerberApertureObround;
     }
     else if ([apertureType isEqualToString:@"P"])
     {
         [scanner scanString:@"P" intoString:nil];
-        definition.apertureType = PFGerberAperturePolygon;
+        definition.apertureType = SPGerberAperturePolygon;
     }
     else
     {
-        definition.apertureType = PFGerberApertureMacroReference;
+        definition.apertureType = SPGerberApertureMacroReference;
         definition.macroName = apertureType;
     }
     

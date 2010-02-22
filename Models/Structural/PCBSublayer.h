@@ -11,13 +11,12 @@
 
 @class PCBLayer;
 
-@interface PCBSublayer :  DesignSurface  
+@interface PCBSublayer : DesignSurface
 {
 }
 
 @property (nonatomic, retain) PCBLayer * layer;
 
 @end
-
 
 

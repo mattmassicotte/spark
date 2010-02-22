@@ -20,26 +20,26 @@ STAssertTrue([element isMemberOfClass:[SPGerberDCode class]], @""); \
 STAssertEquals([(SPGerberDCode*)element code], (NSUInteger)expectedCode, @"")
 
 #define AssertLinearCoordinate(element, expectedX, expectedY, expectedExposure) \
-STAssertEquals([[(PFGerberCoordinate*)element x] doubleValue], expectedX, @""); \
-STAssertEquals([[(PFGerberCoordinate*)element y] doubleValue], expectedY, @""); \
-STAssertNil([(PFGerberCoordinate*)element i], @""); \
-STAssertNil([(PFGerberCoordinate*)element j], @""); \
-STAssertEquals([(PFGerberCoordinate*)element exposureType], expectedExposure, @"")
+STAssertEquals([[(SPGerberCoordinate*)element x] doubleValue], expectedX, @""); \
+STAssertEquals([[(SPGerberCoordinate*)element y] doubleValue], expectedY, @""); \
+STAssertNil([(SPGerberCoordinate*)element i], @""); \
+STAssertNil([(SPGerberCoordinate*)element j], @""); \
+STAssertEquals([(SPGerberCoordinate*)element exposureType], expectedExposure, @"")
 
 #define AssertArcCoordinate(element, expectedX, expectedY, expectedI, expectedJ, expectedExposure) \
-STAssertEquals([[(PFGerberCoordinate*)element x] doubleValue], expectedX, @""); \
-STAssertEquals([[(PFGerberCoordinate*)element y] doubleValue], expectedY, @""); \
-STAssertEquals([[(PFGerberCoordinate*)element i] doubleValue], expectedI, @""); \
-STAssertEquals([[(PFGerberCoordinate*)element j] doubleValue], expectedJ, @""); \
-STAssertEquals([(PFGerberCoordinate*)element exposureType], expectedExposure, @"")
+STAssertEquals([[(SPGerberCoordinate*)element x] doubleValue], expectedX, @""); \
+STAssertEquals([[(SPGerberCoordinate*)element y] doubleValue], expectedY, @""); \
+STAssertEquals([[(SPGerberCoordinate*)element i] doubleValue], expectedI, @""); \
+STAssertEquals([[(SPGerberCoordinate*)element j] doubleValue], expectedJ, @""); \
+STAssertEquals([(SPGerberCoordinate*)element exposureType], expectedExposure, @"")
 
 #define AssertRectangleAperture(element, expectedDCode, xSize, ySize) \
-STAssertEquals([(PFGerberApertureDefinition*)element apertureType], PFGerberApertureRectangle, @""); \
-STAssertEquals([(PFGerberApertureDefinition*)element dCode], (NSUInteger)expectedDCode, @""); \
-STAssertEquals([[[(PFGerberApertureDefinition*)element modifiers] objectAtIndex:0] doubleValue], xSize, @""); \
-STAssertEquals([[[(PFGerberApertureDefinition*)element modifiers] objectAtIndex:1] doubleValue], ySize, @"")
+STAssertEquals([(SPGerberApertureDefinition*)element apertureType], SPGerberApertureRectangle, @""); \
+STAssertEquals([(SPGerberApertureDefinition*)element dCode], (NSUInteger)expectedDCode, @""); \
+STAssertEquals([[[(SPGerberApertureDefinition*)element modifiers] objectAtIndex:0] doubleValue], xSize, @""); \
+STAssertEquals([[[(SPGerberApertureDefinition*)element modifiers] objectAtIndex:1] doubleValue], ySize, @"")
 
 #define AssertCircleAperture(element, expectedDCode, xSize) \
-STAssertEquals([(PFGerberApertureDefinition*)element apertureType], PFGerberApertureCircle, @""); \
-STAssertEquals([(PFGerberApertureDefinition*)element dCode], (NSUInteger)expectedDCode, @""); \
-STAssertEquals([[[(PFGerberApertureDefinition*)element modifiers] objectAtIndex:0] doubleValue], xSize, @"")
+STAssertEquals([(SPGerberApertureDefinition*)element apertureType], SPGerberApertureCircle, @""); \
+STAssertEquals([(SPGerberApertureDefinition*)element dCode], (NSUInteger)expectedDCode, @""); \
+STAssertEquals([[[(SPGerberApertureDefinition*)element modifiers] objectAtIndex:0] doubleValue], xSize, @"")

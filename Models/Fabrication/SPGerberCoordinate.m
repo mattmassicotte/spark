@@ -1,14 +1,14 @@
 //
-//  PFGerberCoordinate.m
+//  SPGerberCoordinate.m
 //  Spark
 //
 //  Created by Matt Massicotte on 2/7/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "PFGerberCoordinate.h"
+#import "SPGerberCoordinate.h"
 
-@implementation PFGerberCoordinate
+@implementation SPGerberCoordinate
 
 - (void)dealloc
 {

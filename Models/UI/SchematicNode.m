@@ -22,7 +22,7 @@
 	return self;
 }
 
-- (BOOL)isHeader
+- (BOOL)SPGerberExposureOff
 {
 	return YES;
 }

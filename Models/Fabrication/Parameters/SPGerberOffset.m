@@ -7,10 +7,16 @@
 //
 
 #import "SPGerberOffset.h"
+#import "SPGerberRenderingContext.h"
 
 @implementation SPGerberOffset
 
 @synthesize aOffset;
 @synthesize bOffset;
+
+- (void)applyToContext:(SPGerberRenderingContext *)context
+{
+    context.offset = self;
+}
 
 @end

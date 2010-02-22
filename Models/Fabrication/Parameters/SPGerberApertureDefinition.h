@@ -1,5 +1,5 @@
 //
-//  PFGerberApertureDefinition.h
+//  SPGerberApertureDefinition.h
 //  Spark
 //
 //  Created by Matt Massicotte on 2/7/10.
@@ -9,23 +9,23 @@
 #import <Cocoa/Cocoa.h>
 #import "SPGerberParameter.h"
 
-typedef enum _PFGerberApertureType {
-    PFGerberApertureCircle,
-	PFGerberApertureRectangle,
-	PFGerberApertureObround,
-	PFGerberAperturePolygon,
-    PFGerberApertureMacroReference
-} PFGerberApertureType;
+typedef enum _SPGerberApertureType {
+    SPGerberApertureCircle,
+	SPGerberApertureRectangle,
+	SPGerberApertureObround,
+	SPGerberAperturePolygon,
+    SPGerberApertureMacroReference
+} SPGerberApertureType;
 
-@interface PFGerberApertureDefinition : SPGerberParameter
+@interface SPGerberApertureDefinition : SPGerberParameter
 {
-    PFGerberApertureType apertureType;
+    SPGerberApertureType apertureType;
     NSUInteger           dCode;
     NSString*            macroName;
     NSMutableArray*      modifiers;
 }
 
-@property (nonatomic)           PFGerberApertureType apertureType;
+@property (nonatomic)           SPGerberApertureType apertureType;
 @property (nonatomic)           NSUInteger           dCode;
 @property (nonatomic, copy)     NSString*            macroName;
 @property (nonatomic, readonly) NSMutableArray*      modifiers;

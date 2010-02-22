@@ -17,9 +17,9 @@
 #import "SPGerberImagePolarity.h"
 #import "SPGerberLayerPolarity.h"
 
-#import "PFGerberApertureDefinition.h"
+#import "SPGerberApertureDefinition.h"
 #import "PFGerberApertureMacro.h"
-#import "PFGerberCoordinate.h"
+#import "SPGerberCoordinate.h"
 
 #import "SPGerberFunctionCode.h"
 #import "SPGerberGCode.h"

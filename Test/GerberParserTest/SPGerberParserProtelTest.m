@@ -28,7 +28,7 @@
     
     AssertDCode([mockDelegate elementAtIndex:65], 17);
     
-    AssertLinearCoordinate([mockDelegate elementAtIndex:66], -1594.0, 4550.0, PFGerberExposureOff);
+    AssertLinearCoordinate([mockDelegate elementAtIndex:66], -1594.0, 4550.0, SPGerberExposureOff);
     
     AssertMCode([mockDelegate elementAtIndex:75], 2);
 }

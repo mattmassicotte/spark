@@ -25,9 +25,9 @@
 		C92191D8112FBB3C00401AD4 /* MockGerberParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92191A5112FBA5800401AD4 /* MockGerberParserDelegate.m */; };
 		C92191D9112FBB4A00401AD4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		C92191F2112FBD8500401AD4 /* SPGerberParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219195112FB9F300401AD4 /* SPGerberParser.m */; };
-		C92191FB112FBDC400401AD4 /* PFGerberApertureDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */; };
+		C92191FB112FBDC400401AD4 /* SPGerberApertureDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219135112FB8F400401AD4 /* SPGerberApertureDefinition.m */; };
 		C92191FC112FBDC400401AD4 /* PFGerberApertureMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */; };
-		C92191FD112FBDC400401AD4 /* PFGerberCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */; };
+		C92191FD112FBDC400401AD4 /* SPGerberCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219139112FB8F400401AD4 /* SPGerberCoordinate.m */; };
 		C92191FF112FBDC400401AD4 /* SPGerberFunctionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C921913D112FB8F400401AD4 /* SPGerberFunctionCode.m */; };
 		C9219208112FBE9F00401AD4 /* NSScannerExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C92190FB112FB8F300401AD4 /* NSScannerExtensions.m */; };
 		C97D061C1042101600F6BBCC /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
@@ -47,7 +47,7 @@
 		C9AFF89411319101001AB3E9 /* SPGerberImagePolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89311319101001AB3E9 /* SPGerberImagePolarity.m */; };
 		C9AFF89911319225001AB3E9 /* SPGerberLayerPolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89811319225001AB3E9 /* SPGerberLayerPolarity.m */; };
 		C9AFF8BD113196D5001AB3E9 /* layer_name_with_no_star.gtl in Resources */ = {isa = PBXBuildFile; fileRef = C9AFF8BC113196D5001AB3E9 /* layer_name_with_no_star.gtl */; };
-		C9AFF8DF11319FA2001AB3E9 /* PFGerberCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */; };
+		C9AFF8DF11319FA2001AB3E9 /* SPGerberCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219139112FB8F400401AD4 /* SPGerberCoordinate.m */; };
 		C9AFF8E011319FA9001AB3E9 /* SPGerberMCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7AB1130B2BC001AB3E9 /* SPGerberMCode.m */; };
 		C9AFF8E111319FAC001AB3E9 /* SPGerberDCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7A51130B22D001AB3E9 /* SPGerberDCode.m */; };
 		C9AFF8E211319FAF001AB3E9 /* SPGerberGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF77F1130AFE3001AB3E9 /* SPGerberGCode.m */; };
@@ -60,7 +60,7 @@
 		C9AFF8E911319FCC001AB3E9 /* SPGerberLayerName.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89011319074001AB3E9 /* SPGerberLayerName.m */; };
 		C9AFF8EA11319FCC001AB3E9 /* SPGerberImagePolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89311319101001AB3E9 /* SPGerberImagePolarity.m */; };
 		C9AFF8EB11319FCC001AB3E9 /* SPGerberLayerPolarity.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF89811319225001AB3E9 /* SPGerberLayerPolarity.m */; };
-		C9AFF8EC11319FCC001AB3E9 /* PFGerberApertureDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */; };
+		C9AFF8EC11319FCC001AB3E9 /* SPGerberApertureDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219135112FB8F400401AD4 /* SPGerberApertureDefinition.m */; };
 		C9AFF8ED11319FCC001AB3E9 /* PFGerberApertureMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */; };
 		C9AFF8F011319FDB001AB3E9 /* SPGerberStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF7B41130B3A2001AB3E9 /* SPGerberStatement.m */; };
 		C9AFF8F111319FEB001AB3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92191CD112FBAD800401AD4 /* main.m */; };
@@ -90,6 +90,9 @@
 		C9C325FE1131DEC90044D3BC /* PCBLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C325FB1131DEC90044D3BC /* PCBLayer.m */; };
 		C9C325FF1131DEC90044D3BC /* PCBSublayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C325FD1131DEC90044D3BC /* PCBSublayer.m */; };
 		C9C326111131DFDD0044D3BC /* SPPCBLayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9219162112FB8F400401AD4 /* SPPCBLayerNode.m */; };
+		C9C326AC1131F40E0044D3BC /* SPGerberRenderingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C326AB1131F40E0044D3BC /* SPGerberRenderingContext.m */; };
+		C9C326FC1131FB9B0044D3BC /* ImportWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C921916C112FB8F400401AD4 /* ImportWindow.xib */; };
+		C9C327241132006D0044D3BC /* NSScannerExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C92190FB112FB8F300401AD4 /* NSScannerExtensions.m */; };
 		C9F8FA3310420E9500CFE30A /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */; };
 /* End PBXBuildFile section */
 
@@ -173,12 +176,12 @@
 		C9219112112FB8F300401AD4 /* SPImportWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPImportWindowController.m; sourceTree = "<group>"; };
 		C9219113112FB8F300401AD4 /* SPWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWindowController.h; sourceTree = "<group>"; };
 		C9219114112FB8F300401AD4 /* SPWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWindowController.m; sourceTree = "<group>"; };
-		C9219134112FB8F400401AD4 /* PFGerberApertureDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGerberApertureDefinition.h; path = Parameters/PFGerberApertureDefinition.h; sourceTree = "<group>"; };
-		C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFGerberApertureDefinition.m; path = Parameters/PFGerberApertureDefinition.m; sourceTree = "<group>"; };
+		C9219134112FB8F400401AD4 /* SPGerberApertureDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGerberApertureDefinition.h; path = Parameters/SPGerberApertureDefinition.h; sourceTree = "<group>"; };
+		C9219135112FB8F400401AD4 /* SPGerberApertureDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGerberApertureDefinition.m; path = Parameters/SPGerberApertureDefinition.m; sourceTree = "<group>"; };
 		C9219136112FB8F400401AD4 /* PFGerberApertureMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGerberApertureMacro.h; path = Parameters/PFGerberApertureMacro.h; sourceTree = "<group>"; };
 		C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFGerberApertureMacro.m; path = Parameters/PFGerberApertureMacro.m; sourceTree = "<group>"; };
-		C9219138112FB8F400401AD4 /* PFGerberCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGerberCoordinate.h; sourceTree = "<group>"; };
-		C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGerberCoordinate.m; sourceTree = "<group>"; };
+		C9219138112FB8F400401AD4 /* SPGerberCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGerberCoordinate.h; sourceTree = "<group>"; };
+		C9219139112FB8F400401AD4 /* SPGerberCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGerberCoordinate.m; sourceTree = "<group>"; };
 		C921913C112FB8F400401AD4 /* SPGerberFunctionCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGerberFunctionCode.h; path = FunctionCodes/SPGerberFunctionCode.h; sourceTree = "<group>"; };
 		C921913D112FB8F400401AD4 /* SPGerberFunctionCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGerberFunctionCode.m; path = FunctionCodes/SPGerberFunctionCode.m; sourceTree = "<group>"; };
 		C921913F112FB8F400401AD4 /* Arc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arc.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 		C9C325FB1131DEC90044D3BC /* PCBLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCBLayer.m; sourceTree = "<group>"; };
 		C9C325FC1131DEC90044D3BC /* PCBSublayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCBSublayer.h; sourceTree = "<group>"; };
 		C9C325FD1131DEC90044D3BC /* PCBSublayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCBSublayer.m; sourceTree = "<group>"; };
+		C9C326AA1131F40E0044D3BC /* SPGerberRenderingContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGerberRenderingContext.h; path = Transformation/SPGerberRenderingContext.h; sourceTree = "<group>"; };
+		C9C326AB1131F40E0044D3BC /* SPGerberRenderingContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGerberRenderingContext.m; path = Transformation/SPGerberRenderingContext.m; sourceTree = "<group>"; };
 		C9F06F591085877800362CAE /* resistor.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = resistor.xml; path = "Stock Documents/Symbols/resistor.xml"; sourceTree = "<group>"; };
 		C9F8FA3210420E9500CFE30A /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = /Library/Frameworks/BWToolkitFramework.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -389,12 +394,12 @@
 			children = (
 				C92190FC112FB8F300401AD4 /* Controllers */,
 				C9219132112FB8F400401AD4 /* Models */,
-				C9219169112FB8F400401AD4 /* Resources */,
 				C921917D112FB8F400401AD4 /* Visualization */,
-				514E9E0C081EC698009B8CD9 /* Importer */,
-				C92190F9112FB8F300401AD4 /* Class Extensions */,
 				C92191A1112FBA5800401AD4 /* Test */,
+				C92190F9112FB8F300401AD4 /* Class Extensions */,
 				C9219167112FB8F400401AD4 /* Other Sources */,
+				C9219169112FB8F400401AD4 /* Resources */,
+				514E9E0C081EC698009B8CD9 /* Importer */,
 				C9F06F561085873F00362CAE /* Stock Documents */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
@@ -486,6 +491,7 @@
 				C9219147112FB8F400401AD4 /* Layout */,
 				C9219153112FB8F400401AD4 /* Structural */,
 				C921915E112FB8F400401AD4 /* UI */,
+				C9C326A91131F3CF0044D3BC /* Transformation */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -497,8 +503,8 @@
 				C921920B112FBF4500401AD4 /* FunctionCodes */,
 				C9AFF7B31130B3A2001AB3E9 /* SPGerberStatement.h */,
 				C9AFF7B41130B3A2001AB3E9 /* SPGerberStatement.m */,
-				C9219138112FB8F400401AD4 /* PFGerberCoordinate.h */,
-				C9219139112FB8F400401AD4 /* PFGerberCoordinate.m */,
+				C9219138112FB8F400401AD4 /* SPGerberCoordinate.h */,
+				C9219139112FB8F400401AD4 /* SPGerberCoordinate.m */,
 			);
 			path = Fabrication;
 			sourceTree = "<group>";
@@ -740,8 +746,8 @@
 				C9AFF89311319101001AB3E9 /* SPGerberImagePolarity.m */,
 				C9AFF89711319225001AB3E9 /* SPGerberLayerPolarity.h */,
 				C9AFF89811319225001AB3E9 /* SPGerberLayerPolarity.m */,
-				C9219134112FB8F400401AD4 /* PFGerberApertureDefinition.h */,
-				C9219135112FB8F400401AD4 /* PFGerberApertureDefinition.m */,
+				C9219134112FB8F400401AD4 /* SPGerberApertureDefinition.h */,
+				C9219135112FB8F400401AD4 /* SPGerberApertureDefinition.m */,
 				C9219136112FB8F400401AD4 /* PFGerberApertureMacro.h */,
 				C9219137112FB8F400401AD4 /* PFGerberApertureMacro.m */,
 			);
@@ -766,6 +772,15 @@
 				C9219152112FB8F400401AD4 /* SPViewerDocument.m */,
 			);
 			name = Documents;
+			sourceTree = "<group>";
+		};
+		C9C326A91131F3CF0044D3BC /* Transformation */ = {
+			isa = PBXGroup;
+			children = (
+				C9C326AA1131F40E0044D3BC /* SPGerberRenderingContext.h */,
+				C9C326AB1131F40E0044D3BC /* SPGerberRenderingContext.m */,
+			);
+			name = Transformation;
 			sourceTree = "<group>";
 		};
 		C9F06F561085873F00362CAE /* Stock Documents */ = {
@@ -908,6 +923,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C326FC1131FB9B0044D3BC /* ImportWindow.xib in Resources */,
 				C9C3257A1131CAC70044D3BC /* SparkViewerMainMenu.xib in Resources */,
 				C9AFF93B1131C104001AB3E9 /* SPViewerDocument.xib in Resources */,
 			);
@@ -953,9 +969,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9219208112FBE9F00401AD4 /* NSScannerExtensions.m in Sources */,
-				C92191FB112FBDC400401AD4 /* PFGerberApertureDefinition.m in Sources */,
+				C92191FB112FBDC400401AD4 /* SPGerberApertureDefinition.m in Sources */,
 				C92191FC112FBDC400401AD4 /* PFGerberApertureMacro.m in Sources */,
-				C92191FD112FBDC400401AD4 /* PFGerberCoordinate.m in Sources */,
+				C92191FD112FBDC400401AD4 /* SPGerberCoordinate.m in Sources */,
 				C92191FF112FBDC400401AD4 /* SPGerberFunctionCode.m in Sources */,
 				C92191F2112FBD8500401AD4 /* SPGerberParser.m in Sources */,
 				C92191D7112FBB3900401AD4 /* SPGerberParserBasicTest.m in Sources */,
@@ -981,6 +997,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C327241132006D0044D3BC /* NSScannerExtensions.m in Sources */,
 				C9C326111131DFDD0044D3BC /* SPPCBLayerNode.m in Sources */,
 				C9C325951131CB600044D3BC /* SparkDocument.xcdatamodel in Sources */,
 				C9C325841131CB2B0044D3BC /* Arc.m in Sources */,
@@ -1011,19 +1028,20 @@
 				C9AFF8E911319FCC001AB3E9 /* SPGerberLayerName.m in Sources */,
 				C9AFF8EA11319FCC001AB3E9 /* SPGerberImagePolarity.m in Sources */,
 				C9AFF8EB11319FCC001AB3E9 /* SPGerberLayerPolarity.m in Sources */,
-				C9AFF8EC11319FCC001AB3E9 /* PFGerberApertureDefinition.m in Sources */,
+				C9AFF8EC11319FCC001AB3E9 /* SPGerberApertureDefinition.m in Sources */,
 				C9AFF8ED11319FCC001AB3E9 /* PFGerberApertureMacro.m in Sources */,
 				C9AFF8E311319FB3001AB3E9 /* SPGerberFunctionCode.m in Sources */,
 				C9AFF8E211319FAF001AB3E9 /* SPGerberGCode.m in Sources */,
 				C9AFF8E111319FAC001AB3E9 /* SPGerberDCode.m in Sources */,
 				C9AFF8E011319FA9001AB3E9 /* SPGerberMCode.m in Sources */,
-				C9AFF8DF11319FA2001AB3E9 /* PFGerberCoordinate.m in Sources */,
+				C9AFF8DF11319FA2001AB3E9 /* SPGerberCoordinate.m in Sources */,
 				C9219196112FB9F300401AD4 /* SparkViewerAppDelegate.m in Sources */,
 				C9219197112FB9F300401AD4 /* SPGerberParser.m in Sources */,
 				C9C325C11131D5F40044D3BC /* SPPCBSublayerNode.m in Sources */,
 				C9C325C41131D6590044D3BC /* SPCAMTitleNode.m in Sources */,
 				C9C325FE1131DEC90044D3BC /* PCBLayer.m in Sources */,
 				C9C325FF1131DEC90044D3BC /* PCBSublayer.m in Sources */,
+				C9C326AC1131F40E0044D3BC /* SPGerberRenderingContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

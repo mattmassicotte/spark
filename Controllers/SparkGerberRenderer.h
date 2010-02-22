@@ -9,16 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "SPFabrication.h"
 
-typedef enum _SparkGerberRenderedInterpolationMode
-{
-    LinearInterpolationMode10XScale,
-    LinearInterpolationMode1XScale,
-    LinearInterpolationModePoint1XScale,
-    LinearInterpolationModePoint01XScale,
-    CircularInterpolationModeClockwise,
-    CircularInterpolationModeCounterclockwise,
-} SparkGerberRenderedInterpolationMode;
-
 @class CAMLayer, DesignElement;
 
 @interface SparkGerberRenderer : NSObject <SPGerberParserDelegate>

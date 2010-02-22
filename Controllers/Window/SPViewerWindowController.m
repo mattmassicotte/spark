@@ -48,45 +48,9 @@
     [projectOutlineView reloadData];
 }
 
-- (NSString *)windowNibName 
+- (NSString*)windowNibName 
 {
     return @"SPViewerDocument";
-}
-
-- (IBAction)import:(id)sender
-{
-    NSOpenPanel* panel;
-    
-    [self willChangeValueForKey:@"outlineSections"];
-    [self addFakeData];
-    [self didChangeValueForKey:@"outlineSections"];
-    
-    return;
-    
-    panel = [NSOpenPanel openPanel];
-    
-    [panel setAllowsMultipleSelection:YES];
-    [panel setCanChooseFiles:YES];
-    [panel setCanChooseDirectories:NO];
-    
-    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"com.spark.gerber", nil]];
-    
-    [panel beginSheetModalForWindow:[self window] completionHandler:^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton)
-        {
-            [[panel URLs] enumerateObjectsUsingBlock:^(id url, NSUInteger idx, BOOL *stop) {
-                NSString* uti;
-                
-                [url getResourceValue:&uti forKey:NSURLTypeIdentifierKey error:nil];
-                NSLog(@"%@", uti);
-                
-                [[self document] importGerberFile:url error:nil];
-            }];
-            
-            [projectOutlineView reloadData];
-            [[camViewController elementView] reloadData];
-        }
-    }];
 }
 
 - (void)windowDidLoad

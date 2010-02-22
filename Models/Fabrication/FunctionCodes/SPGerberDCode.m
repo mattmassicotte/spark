@@ -7,8 +7,24 @@
 //
 
 #import "SPGerberDCode.h"
-
+#import "SPGerberRenderingContext.h"
 
 @implementation SPGerberDCode
+
+- (void)applyToContext:(SPGerberRenderingContext*)context
+{
+    switch (self.code)
+    {
+        case SPGerberExposureOn:
+            break;
+        case SPGerberExposureOff:
+            break;
+        case SPGerberExposureFlash:
+            break;
+        default:
+            [context setActiveAperture:self.code];
+            break;
+    }
+}
 
 @end

@@ -10,7 +10,7 @@
 
 @protocol SPGerberParserDelegate;
 
-@class SPGerberStatement, SPGerberFunctionCode, PFGerberCoordinate, SPGerberParameter;
+@class SPGerberStatement, SPGerberFunctionCode, SPGerberCoordinate, SPGerberParameter;
 
 @interface SPGerberParser : NSObject
 {
@@ -43,6 +43,6 @@
 - (void)parser:(SPGerberParser*)parser foundStatement:(SPGerberStatement*)statement;
 - (void)parser:(SPGerberParser*)parser foundParameter:(SPGerberParameter*)parameter;
 - (void)parser:(SPGerberParser*)parser foundFunctionCode:(SPGerberFunctionCode*)functionCode;
-- (void)parser:(SPGerberParser*)parser foundCoordinate:(PFGerberCoordinate*)coordinate;
+- (void)parser:(SPGerberParser*)parser foundCoordinate:(SPGerberCoordinate*)coordinate;
 
 @end
