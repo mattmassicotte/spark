@@ -16,7 +16,7 @@
 
 - (void)applyToContext:(SPGerberRenderingContext *)context
 {
-    context.offset = self;
+    context.offset = SPMakeVec(self.aOffset, self.bOffset, 0.0);
 }
 
 @end

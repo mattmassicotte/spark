@@ -37,44 +37,4 @@
 	return [[self document] managedObjectContext];
 }
 
-#pragma mark -
-#pragma mark OutlineView Support
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
-{
-	if (item == nil)
-	{
-		return [outlineSections objectAtIndex:index];
-	}
-	
-	return [[item children] objectAtIndex:index];
-}
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
-{
-	if (item == nil)
-	{
-		return YES;
-	}
-    
-	return ![item isLeaf];
-}
-
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
-{
-	if (item == nil)
-	{
-		return [outlineSections count];
-	}
-	
-	return [[item children] count];
-}
-- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
-{
-	return [item title];
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
-{
-	return ![item isHeader];
-}
-
 @end

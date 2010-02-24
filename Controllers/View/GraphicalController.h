@@ -13,13 +13,14 @@
 
 @interface GraphicalController : NSResponder <SparkElementViewDataSource, SparkElementViewDelegate>
 {
-	IBOutlet SparkScrollView*  scrollView;
-	IBOutlet SparkElementView* elementView;
+	IBOutlet SparkScrollView*        scrollView;
+	IBOutlet SparkElementView*       elementView;
+    IBOutlet NSManagedObjectContext* managedObjectContext;
 }
 
 @property (nonatomic, retain, readonly) SparkElementView*       elementView;
-@property (nonatomic, assign, readonly) NSWindow*               window;
-@property (nonatomic, assign, readonly) NSDocument*             document;
-@property (nonatomic, assign, readonly) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, retain)           NSManagedObjectContext* managedObjectContext;
+
+- (void)reloadData;
 
 @end

@@ -8,11 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class SPImportWindowController;
+@class SparkCAMViewController;
 
 @interface SPViewerDocument : NSPersistentDocument
 {
-    SPImportWindowController* importWindowController;
+    IBOutlet SparkCAMViewController* camViewController;
+    IBOutlet NSOutlineView*			 projectOutlineView;
 }
 
 - (BOOL)importGerberFile:(NSURL*)url error:(NSError **)error;

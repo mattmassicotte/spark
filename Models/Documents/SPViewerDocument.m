@@ -7,11 +7,13 @@
 //
 
 #import "SPViewerDocument.h"
-#import "SPViewerWindowController.h"
+#import "SparkCAMViewController.h"
 #import "SPImportWindowController.h"
 #import "SPGerberRenderingContext.h"
 #import "PCBLayer.h"
 #import "PCBSublayer.h"
+#import "FreeElement.h"
+#import "Arc.h"
 
 #define GERBER_UTI @"com.spark.gerber"
 
@@ -33,9 +35,19 @@
     return self;
 }
 
-- (void)makeWindowControllers
+- (void)dealloc
 {
-	[self addWindowController:[[SPViewerWindowController new] autorelease]];
+    [super dealloc];
+}
+
+- (NSString*)windowNibName 
+{
+    return @"SPViewerDocument";
+}
+
+- (void)windowControllerDidLoadNib:(NSWindowController *)windowController
+{
+    camViewController.managedObjectContext = [self managedObjectContext];
 }
 
 + (NSArray *)readableTypes
@@ -77,6 +89,8 @@
             [[panel URLs] enumerateObjectsUsingBlock:^(id url, NSUInteger idx, BOOL *stop) {
                 [self importGerberFile:url error:nil];
             }];
+            
+            [camViewController reloadData];
         }
     }];
 }
@@ -112,6 +126,24 @@
     parser.delegate = context;
     
     [parser parse];
+    
+    [parser release];
+    [context release];
+    
+//    FreeElement* e = [NSEntityDescription insertNewObjectForEntityForName:@"FreeElement" inManagedObjectContext:[self managedObjectContext]];
+//    e.graphicalRep = [NSEntityDescription insertNewObjectForEntityForName:@"GraphicalRep" inManagedObjectContext:[self managedObjectContext]];
+//    Arc* arc       = [NSEntityDescription insertNewObjectForEntityForName:@"Arc" inManagedObjectContext:[self managedObjectContext]];
+//    
+//    arc.centerX = [NSNumber numberWithDouble:0.0];
+//    arc.centerY = [NSNumber numberWithDouble:0.0];
+//    
+//    arc.innerRadius = [NSNumber numberWithDouble:1.0];
+//    arc.outerRadius = [NSNumber numberWithDouble:2.0];
+//    
+//    arc.startAngle  = [NSNumber numberWithDouble:3.0*M_PI/2.0];
+//    arc.endAngle    = [NSNumber numberWithDouble:2.0*M_PI];
+//    
+//    [e.graphicalRep addPrimitivesObject:arc];
     
     return YES;
 }

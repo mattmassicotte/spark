@@ -16,38 +16,6 @@
 
 @implementation SPViewerWindowController
 
-- (void)addFakeData
-{
-    PCBLayer*    layer;
-    PCBSublayer* sublayer;
-    
-    NSLog(@"adding fake data");
-    
-    layer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBLayer" inManagedObjectContext:[self managedObjectContext]];
-    layer.name = @"Layer 1";
-    
-    sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
-    sublayer.name = @"Mechanical";
-    [layer addSublayersObject:sublayer];
-    
-    sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
-    sublayer.name = @"Top Copper";
-    [layer addSublayersObject:sublayer];
-    
-    sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
-    sublayer.name = @"Bottom Copper";
-    [layer addSublayersObject:sublayer];
-    
-    layer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBLayer" inManagedObjectContext:[self managedObjectContext]];
-    layer.name = @"Layer 2";
-    
-    sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
-    sublayer.name = @"Mechanical";
-    [layer addSublayersObject:sublayer];
-    
-    [projectOutlineView reloadData];
-}
-
 - (NSString*)windowNibName 
 {
     return @"SPViewerDocument";

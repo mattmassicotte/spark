@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "SPGerberParser.h"
 #import "SPGerberDCode.h"
+#import "SPGeometry.h"
 
 typedef enum _SparkGerberInterpolationMode
 {
@@ -20,33 +21,48 @@ typedef enum _SparkGerberInterpolationMode
     CircularInterpolationModeCounterclockwise,
 } SparkGerberInterpolationMode;
 
-@class PCBSublayer;
+@class PCBSublayer, DesignElement, Quad, Arc;
 @class SPGerberOffset, SPGerberApertureDefinition;
 
 @interface SPGerberRenderingContext : NSObject <SPGerberParserDelegate>
 {
-    PCBSublayer* sublayer;
+    PCBSublayer*                 sublayer;
+    DesignElement*               currentElement;
     
     SparkGerberInterpolationMode interpolationMode;
     BOOL                         fullCircleInterpolationEnabled;
     BOOL                         usingInches;
     
-    SPGerberOffset*              offset;
+    SPVec                        offset;
+    SPVec                        scale;
     
     NSMutableDictionary*         apertures;
     SPGerberApertureDefinition*  activeAperture;
     SPGerberExposureType         activeExposure;
+    
+    SPVec                        lastPosition;
 }
 
 - (id)initWithPCBSublayer:(PCBSublayer*)aSublayer;
 
-@property (nonatomic, assign) SparkGerberInterpolationMode interpolationMode;
-@property (nonatomic, assign) BOOL                         fullCircleInterpolationEnabled;
-@property (nonatomic, assign) BOOL                         usingInches;
-@property (nonatomic, retain) SPGerberOffset*              offset;
-@property (nonatomic, assign) SPGerberExposureType         activeExposure;
+@property (nonatomic)                   SparkGerberInterpolationMode interpolationMode;
+@property (nonatomic)                   BOOL                         fullCircleInterpolationEnabled;
+@property (nonatomic)                   BOOL                         usingInches;
+@property (nonatomic)                   SPVec                        offset;
+@property (nonatomic)                   SPGerberExposureType         activeExposure;
+@property (nonatomic)                   SPVec                        lastPosition;
+@property (nonatomic, retain, readonly) SPGerberApertureDefinition*  activeAperture;
+
+- (double)scaleX:(double)xValue;
+- (double)scaleY:(double)yValue;
+- (SPVec)scalePoint:(SPVec)point;
 
 - (void)addApertureDefinition:(SPGerberApertureDefinition*)definition;
 - (void)setActiveAperture:(NSUInteger)apertureNumber;
+
+- (void)startElement;
+- (void)finishElement;
+- (Quad*)addQuadToCurrentElement;
+- (Arc*)addArcToCurrentElement;
 
 @end
