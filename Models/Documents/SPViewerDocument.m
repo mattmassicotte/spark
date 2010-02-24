@@ -14,10 +14,13 @@
 #import "PCBSublayer.h"
 #import "FreeElement.h"
 #import "Arc.h"
+#import "SPCAMTitleNode.h"
 
 #define GERBER_UTI @"com.spark.gerber"
 
 @interface SPViewerDocument ()
+
+@property (nonatomic, retain) NSArray* projectHeadings;
 
 - (BOOL)importGerberFile:(NSURL*)url error:(NSError **)error;
 
@@ -30,6 +33,12 @@
     self = [super init];
     if (self != nil)
 	{
+		SPCAMTitleNode* node;
+		
+		node = [SPCAMTitleNode node];
+		node.managedObjectContext = [self managedObjectContext];
+		
+		self.projectHeadings = [NSArray arrayWithObject:node];
     }
     
     return self;
@@ -37,8 +46,12 @@
 
 - (void)dealloc
 {
+	[projectHeadings release];
+	
     [super dealloc];
 }
+
+@synthesize projectHeadings;
 
 - (NSString*)windowNibName 
 {
@@ -116,11 +129,16 @@
 //        }];
 //    }
     
+	[self willChangeValueForKey:@"projectHeadings"];
+	
     layer    = [NSEntityDescription insertNewObjectForEntityForName:@"PCBLayer" inManagedObjectContext:[self managedObjectContext]];
-    sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
+	sublayer = [NSEntityDescription insertNewObjectForEntityForName:@"PCBSublayer" inManagedObjectContext:[self managedObjectContext]];
     
     [layer addSublayersObject:sublayer];
     
+	layer.name = @"Layer";
+	sublayer.name = [url lastPathComponent];
+	
     context = [[SPGerberRenderingContext alloc] initWithPCBSublayer:sublayer];
     parser  = [[SPGerberParser alloc] initWithContentsOfURL:url];
     parser.delegate = context;
@@ -130,6 +148,7 @@
     [parser release];
     [context release];
     
+	[self didChangeValueForKey:@"projectHeadings"];
 //    FreeElement* e = [NSEntityDescription insertNewObjectForEntityForName:@"FreeElement" inManagedObjectContext:[self managedObjectContext]];
 //    e.graphicalRep = [NSEntityDescription insertNewObjectForEntityForName:@"GraphicalRep" inManagedObjectContext:[self managedObjectContext]];
 //    Arc* arc       = [NSEntityDescription insertNewObjectForEntityForName:@"Arc" inManagedObjectContext:[self managedObjectContext]];

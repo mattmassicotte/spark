@@ -14,7 +14,10 @@
 {
     IBOutlet SparkCAMViewController* camViewController;
     IBOutlet NSOutlineView*			 projectOutlineView;
+	IBOutlet NSArray*                projectHeadings;
 }
+
+@property (nonatomic, retain, readonly) NSArray* projectHeadings;
 
 - (BOOL)importGerberFile:(NSURL*)url error:(NSError **)error;
 
