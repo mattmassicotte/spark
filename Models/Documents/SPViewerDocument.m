@@ -84,6 +84,9 @@
     return [super readFromURL:absoluteURL ofType:typeName error:error];
 }
 
+#pragma mark -
+#pragma mark IBActions
+
 - (IBAction)import:(id)sender
 {
     NSOpenPanel* panel;
@@ -106,6 +109,42 @@
             [camViewController reloadData];
         }
     }];
+}
+
+- (IBAction)toggleMiniViewer:(id)sender
+{
+	NSRect scrollViewTargetFrame;
+	NSRect miniViewerTargetFrame;
+	
+	scrollViewTargetFrame = [projectOutlineScrollView frame];
+	miniViewerTargetFrame = [miniViewerContainerView frame];
+	
+	NSLog(@"%@", [projectOutlineView superview]);
+	
+	if (miniViewerTargetFrame.size.height == 0)
+	{
+		// show viewer
+		miniViewerTargetFrame.size.height = 144;
+		
+		scrollViewTargetFrame.size.height =  scrollViewTargetFrame.size.height - miniViewerTargetFrame.size.height;
+		scrollViewTargetFrame.origin.y    += miniViewerTargetFrame.size.height;
+	}
+	else
+	{
+		// hide viewer
+		scrollViewTargetFrame.size.height = scrollViewTargetFrame.size.height + miniViewerTargetFrame.size.height;
+		scrollViewTargetFrame.origin.y    = miniViewerTargetFrame.origin.y;
+
+		miniViewerTargetFrame.size.height = 0;
+	}
+
+	[NSAnimationContext beginGrouping];
+	[[NSAnimationContext currentContext] setDuration:0.2];
+	
+	[[projectOutlineScrollView animator] setFrame:scrollViewTargetFrame];
+	[[miniViewerContainerView animator] setFrame:miniViewerTargetFrame];
+	
+	[NSAnimationContext endGrouping];
 }
 
 - (BOOL)importGerberFile:(NSURL*)url error:(NSError **)error
@@ -165,6 +204,38 @@
 //    [e.graphicalRep addPrimitivesObject:arc];
     
     return YES;
+}
+
+
+
+#pragma mark -
+#pragma mark NSOutlineViewDelegate methods
+
+- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+	//[cell setFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]]];
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+	return NO;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+{
+	SPProjectNode* node;
+	
+	node = [item representedObject];
+	
+	if ([node isHeader])
+		return NO;
+	
+	return YES;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
+{
+	return [[item representedObject] isHeader];
 }
 
 @end

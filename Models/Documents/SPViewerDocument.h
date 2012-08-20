@@ -14,10 +14,15 @@
 {
     IBOutlet SparkCAMViewController* camViewController;
     IBOutlet NSOutlineView*			 projectOutlineView;
-	IBOutlet NSArray*                projectHeadings;
+	IBOutlet NSScrollView*           projectOutlineScrollView;
+	IBOutlet NSView*                 miniViewerContainerView;
+	NSArray*                         projectHeadings;
 }
 
 @property (nonatomic, retain, readonly) NSArray* projectHeadings;
+
+- (IBAction)import:(id)sender;
+- (IBAction)toggleMiniViewer:(id)sender;
 
 - (BOOL)importGerberFile:(NSURL*)url error:(NSError **)error;
 
